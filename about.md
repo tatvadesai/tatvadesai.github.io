@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Hey Swawty it's yo birthday.
+I am Tatva. Love movies and want to make one, one day. I love to read. My library will be coming here soon :)
