@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Progress"
+title: "Progress"
 date: 2024-06-16
-
 ---
+
 
 
 Progress can be measured in the number of ideas that a generation produces and development is 
