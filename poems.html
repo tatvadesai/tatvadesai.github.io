@@ -1,0 +1,13 @@
+---
+layout: default
+title: Poems
+---
+
+<h1>Poems</h1>
+<ul>
+  {% for poem in site.poems %}
+    <li>
+      <a href="{{ poem.url }}">{{ poem.title }}</a> by {{ poem.author }}
+    </li>
+  {% endfor %}
+</ul>
