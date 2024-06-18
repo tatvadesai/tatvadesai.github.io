@@ -1,6 +1,3 @@
-
-
-
 #
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
@@ -8,17 +5,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-
-
-
 title: tatvadesai
 email: tatvadesai95@gmail.com
-description: >- 
+description: >-
   Curious and Loitering around.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "tatvadesai.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tatvadesai
-github_username:  tatvadesai
+github_username: tatvadesai
 linkedin_username: tatvadesai
 
 # Build settings
@@ -30,10 +24,9 @@ collections:
   poems:
     output: true
     permalink: /poems/:title/
-
-
-
-
+  essays:
+    output: true
+    permalink: /essays/:title/
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

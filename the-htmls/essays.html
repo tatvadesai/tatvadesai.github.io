@@ -1,0 +1,12 @@
+---
+layout: default
+title: Essays
+---
+
+<ul>
+    {% for essay in site.essays %}
+    <li>
+        <a href="{{ essay.url }}">{{ essay.title }}</a>
+    </li>
+    {% endfor %}
+</ul>

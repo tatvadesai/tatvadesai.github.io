@@ -11,11 +11,11 @@ Causing altercations,
 Sipping coffee during the summer vacation  
 Feels like levitation  
 Hold me for some duration  
-I don’t understand this relation  
+I don't understand this relation  
 Give me some information  
 about this romantic session.  
 
-Give me some revelation  
+Give me a revelation  
 I need some comprehension  
 About this sweet connection  
 
@@ -23,4 +23,4 @@ Is there something or is this a majestic misconception?
 
 Tell me something  
 Is this sacrilegious  
-Cause this all feels too miraculous  
+Cause this all feels too miraculous
