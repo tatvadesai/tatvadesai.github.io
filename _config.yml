@@ -27,6 +27,22 @@ collections:
   essays:
     output: true
     permalink: /essays/:title/
+  currently_learning:
+    output: false
+  library:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "essays"
+    values:
+      layout: "essay"
+  - scope:
+      path: ""
+      type: "poems"
+    values:
+      layout: "poem"
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
