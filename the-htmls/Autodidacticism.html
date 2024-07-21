@@ -1,0 +1,10 @@
+---
+layout: default
+title: Autodidacticism
+---
+
+<ul>
+    {% for topic in site.auto %}
+    <li><a href="{{ topic.url | relative_url }}">{{ topic.title }}</a></li>
+    {% endfor %}
+</ul>

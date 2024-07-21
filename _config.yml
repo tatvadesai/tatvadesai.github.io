@@ -21,16 +21,14 @@ plugins:
   - jekyll-feed
 
 collections:
+  auto:
+    output: true
   poems:
     output: true
     permalink: /poems/:title/
   essays:
     output: true
     permalink: /essays/:title/
-  currently_learning:
-    output: false
-  library:
-    output: false
 
 defaults:
   - scope:
