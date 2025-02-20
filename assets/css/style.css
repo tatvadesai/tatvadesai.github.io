@@ -20,7 +20,7 @@ body {
 }
 
 .container {
-    min-height: 805px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: var(--deep);
@@ -29,8 +29,8 @@ body {
 }
 
 .grid-layout {
-    display: grid;
-    grid-template-columns: repeat(2, 735px);
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     width: 100%;
     border-radius: 8px;
@@ -38,23 +38,21 @@ body {
 }
 
 .content-wrapper {
-    padding-left: 100px;
-    padding-top: 147px;
-    padding-right: 16px;
+    padding: 100px 20px 40px;
     display: flex;
-    justify-content: center;
-    max-width: 768px;
+    justify-content: flex-start;
+    max-width: 100%;
     width: 100%;
-    height: 805px;
+    height: auto;
     border: 0px solid var(--border-color);
 }
 
 h1 {
     color: var(--text-primary);
-    letter-spacing: 3.6px;
-    line-height: 39.6px;
+    letter-spacing: 2px;
+    line-height: 1.2;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 32px;
     font-family: 'Amulya', system-ui;
     margin: 0;
     border: 0px solid var(--border-color);
@@ -63,8 +61,8 @@ h1 {
 
 .subtitle {
     color: var(--text-accent);
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 20px;
+    line-height: 1.4;
     margin: 12px 0 0 0;
     font-weight: 400;
     border: 0px solid var(--border-color);
@@ -73,16 +71,16 @@ h1 {
 
 .main-content {
     color: var(--text-primary);
-    line-height: 32.5px;
-    font-size: 20px;
-    max-width: 811.647px;
+    line-height: 1.6;
+    font-size: 18px;
+    max-width: 100%;
     margin-top: 32px;
     border: 0px solid var(--border-color);
     box-sizing: border-box;
 }
 
 .section {
-    margin: 16px 0 0 0;
+    margin: 24px 0 0 0;
     font-weight: 400;
     border: 0px solid var(--border-color);
     box-sizing: border-box;
@@ -93,66 +91,73 @@ h1 {
     line-height: 24px;
     gap: 16px;
     display: flex;
+    flex-wrap: wrap;
     margin-top: 8px;
     border: 0px solid var(--border-color);
     box-sizing: border-box;
+}
 
-    a {
-        color: var(--text-primary);
-        text-decoration: underline;
-        transition: opacity 0.2s ease;
-        border: 0px solid var(--border-color);
-        box-sizing: border-box;
-        
-        &:hover {
-            opacity: 0.8;
-        }
-    }
+.links-group a {
+    color: var(--text-primary);
+    text-decoration: underline;
+    transition: opacity 0.2s ease;
+    border: 0px solid var(--border-color);
+    box-sizing: border-box;
+}
+
+.links-group a:hover {
+    opacity: 0.8;
 }
 
 nav {
     position: fixed;
-    top: 24px;
-    right: 32px;
+    top: 20px;
+    right: 20px;
     display: flex;
-    gap: 24px;
-    
-    a {
-        color: var(--text-primary);
-        text-decoration: none;
-        transition: opacity 0.2s ease;
-        
-        &:hover {
-            opacity: 0.8;
-        }
-    }
+    gap: 16px;
+    z-index: 1000;
+    background: var(--deep);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    font-size: 16px;
+}
+
+nav a:hover {
+    opacity: 0.8;
 }
 
 .essays-list {
-    
     display: flex;
     flex-direction: column;
     gap: 24px;
+    width: 100%;
 }
 
 .essay-item {
     border-bottom: 2px solid var(--text-accent);
     padding-bottom: 24px;
+    width: 100%;
 }
 
 .essay-link {
     text-decoration: none;
-    
-    h3 {
-        color: var(--text-primary);
-        margin: 0;
-        font-size: 24px;
-        transition: opacity 0.2s ease;
-    }
-    
-    &:hover h3 {
-        opacity: 0.8;
-    }
+}
+
+.essay-link h3 {
+    color: var(--text-primary);
+    margin: 0;
+    font-size: 20px;
+    transition: opacity 0.2s ease;
+}
+
+.essay-link:hover h3 {
+    opacity: 0.8;
 }
 
 .essay-date {
@@ -163,9 +168,9 @@ nav {
 }
 
 .about-content {
-    font-size: 20px;
-    line-height: 32px;
-    max-width: 768px;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 100%;
 }
 
 .highlight {
@@ -177,4 +182,49 @@ nav {
     padding-left: 20px;
     font-style: italic;
     margin: 24px 0;
+}
+
+@media (min-width: 768px) {
+    .container {
+        min-height: 805px;
+    }
+
+    .grid-layout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-wrapper {
+        padding: 147px 16px 40px 100px;
+        max-width: 768px;
+    }
+
+    h1 {
+        font-size: 36px;
+        letter-spacing: 3.6px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+
+    .main-content {
+        font-size: 20px;
+    }
+
+    .about-content {
+        font-size: 20px;
+    }
+
+    nav {
+        top: 24px;
+        right: 32px;
+        gap: 24px;
+        background: transparent;
+        padding: 0;
+    }
+
+    .essay-link h3 {
+        font-size: 24px;
+    }
 }
