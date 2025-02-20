@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link href="https://api.fonts.coollabs.io/css2?family=Amulya&family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/essays">Essays</a>
+        <a href="/about">About</a>
+    </nav>
+    
+    <div class="container">
+        <div class="grid-layout">
+            <div class="content-wrapper">
+                <div>
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

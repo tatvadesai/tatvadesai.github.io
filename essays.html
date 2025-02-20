@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div class="essays-list">
+    {% for essay in site.essays %}
+    <div class="essay-item">
+        <a href="{{ essay.url }}" class="essay-link">
+            <h3>{{ essay.title }}</h3>
+            <span class="essay-date">{{ essay.date | date: "%B %d, %Y" }}</span>
+        </a>
+    </div>
+    {% endfor %}
+</div>

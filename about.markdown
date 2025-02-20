@@ -4,8 +4,9 @@ title: About
 permalink: /about/
 ---
 
-I am Tatva. I have been internet native since 2008. I have a fascination with all kinds of ideas and I read(try to), everything. Finance is a thing that fascinates me th most. 
+<div class="about-content">
+    <p>I am Tatva. I have been internet native since 2008. I have a fascination with all kinds of ideas and I read(try to), everything. <span class="highlight">Finance is a thing that fascinates me the most.</span></p>
 
-How a simple excel sheet can run the world, eh?
-
+    <p class="quote">How a simple excel sheet can run the world, eh?</p>
+</div>
 

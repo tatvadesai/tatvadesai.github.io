@@ -1,18 +1,25 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: default
 ---
-<blockquote>
-  "A human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyze a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. Specialization is for insects."  
-<span style="color: black;">
-  <br>— Robert A. Heinlein
-</span>
-</blockquote>
-<br>
-<br>
 
-Wonderful quote, right?
+<h1>Tatva Desai</h1>
+<h2 class="subtitle">pathologically curious</h2>
 
-That's it.
+<div class="main-content">
+    <p>I like to build stuff. Stories, Websites, Brands and bullshit.</p>
+</div>
+
+<div class="section">
+    <h3 style="font-weight: normal">A few things I've worked on</h3>
+    <div class="links-group">
+        <a href="https://www.gatheraround.social">GatherAround</a>
+    </div>
+</div>
+
+<div class="section">
+    <h3 style="font-weight: normal">Say hello</h3>
+    <div class="links-group">
+        <a href="mailto:tatvadesai95@gmail.com">Email</a>
+        <a href="https://twitter.com/tatvadesai">Twitter</a>
+    </div>
+</div>
