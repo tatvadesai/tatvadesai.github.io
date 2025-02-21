@@ -6,7 +6,7 @@ layout: default
 <h2 class="subtitle">pathologically curious</h2>
 
 <div class="main-content">
-    <p>I like to build stuff. poems, stories, websites, brands, music and businesses. <I style="color: var(--text-accent)">wherever curiosity takes me.</I></p>
+    <p>I like to build stuff. poems, stories, websites, brands, music, businesses.... <br><I style="color: var(--text-accent)">wherever curiosity takes me.</I></p>
 </div>
 
 <div class="section">
