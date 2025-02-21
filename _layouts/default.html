@@ -9,7 +9,9 @@
 </head>
 <body>
     <nav>
+        {% unless page.url == "/" %}
         <a href="/">Home</a>
+        {% endunless %}
         <a href="/essays">Essays</a>
         <a href="/about">About</a>
     </nav>

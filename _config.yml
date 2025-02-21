@@ -29,6 +29,9 @@ collections:
   essays:
     output: true
     permalink: /essays/:title/
+  logs:
+    output: true
+    permalink: /logs/:title/
 
 defaults:
   - scope:
