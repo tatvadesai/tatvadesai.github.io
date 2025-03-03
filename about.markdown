@@ -10,3 +10,4 @@ permalink: /about/
     <p class="quote">How a simple excel sheet can run the world, eh?</p>
 </div>
 
+<em><a href="https://youtube.com/playlist?list=PLxmCgjTVWU2nxPl9FsJZdZA63jD56X4dd&si=xK0Mud0bYTJHt4hE" style="color: var(--text-accent)">📹 What Did I Get Done This Week?</a></em>
