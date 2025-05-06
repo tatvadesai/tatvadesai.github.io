@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatva Desai - CV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap');
+
+        :root {
+            --font-primary: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-secondary: 'Montserrat', sans-serif;
+
+            --color-primary: #1a365d; /* Deep blue, professional */
+            --color-secondary: #3498db; /* Bright blue, modern accent */
+            --color-accent-bg: #f0f7ff; /* Very light blue, for subtle backgrounds */
+            --color-text-primary: #333; /* Dark gray for main text */
+            --color-text-secondary: #555; /* Medium gray for secondary text */
+            --color-text-muted: #6c757d; /* Lighter gray for less important text */
+            --color-text-heading-item: #2c3e50; /* Darker, slightly desaturated blue for item headings */
+            --color-link: #2980b9; /* Standard blue for links */
+            --color-link-hover: #0056b3; /* Darker blue for link hover */
+
+            --bg-body: #f6f8fa; /* Light gray for the page background */
+            --bg-container: #fff; /* White for the main resume container */
+            --bg-section-header: #f8fafc; /* Very light gray for section headers */
+            --bg-item: #fbfbfd; /* Off-white for individual items like jobs/education */
+
+            --border-light: #e8eaed; /* Light gray for subtle borders */
+            --border-medium: #e0e8f0; /* Slightly darker blue-ish gray for item borders */
+            --border-skill: #e1ebf7; /* Light blue border for skills */
+
+            --border-radius-main: 12px; /* Rounded corners for the main container */
+            --border-radius-item: 8px;  /* Rounded corners for items */
+            --border-radius-small: 4px; /* Smaller rounded corners for tags, etc. */
+            --border-radius-pill: 40px; /* For pill-shaped skill tags */
+
+            --shadow-main: 0 10px 30px rgba(0, 0, 0, 0.08); /* Main container shadow */
+            --shadow-item: 0 2px 10px rgba(0, 0, 0, 0.03); /* Subtle shadow for items */
+            --shadow-item-hover: 0 5px 15px rgba(0, 0, 0, 0.05); /* Enhanced shadow on hover */
+        }
+
+        html {
+            font-size: 100%; /* Sets base for rem units, typically 16px */
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-body);
+            color: var(--color-text-primary);
+            font-size: 1rem; /* Equivalent to 16px by default */
+            -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit browsers */
+            -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+        }
+
+        .resume-container {
+            width: 85%; /* Responsive width */
+            max-width: 950px; /* Maximum width for larger screens */
+            margin: 2.5rem auto; /* 40px top/bottom, centered horizontally */
+            padding: 2.5rem; /* 40px padding inside the container */
+            background-color: var(--bg-container);
+            box-shadow: var(--shadow-main);
+            border-radius: var(--border-radius-main);
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 2.5rem; /* 40px */
+            padding-bottom: 1.5rem; /* 25px */
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        .resume-header h1 {
+            margin: 0 0 1rem 0; /* 15px bottom margin */
+            font-size: 3rem; /* 48px */
+            color: var(--color-primary);
+            font-weight: 700;
+            font-family: var(--font-secondary);
+            letter-spacing: 1px; /* Slight letter spacing for the name */
+        }
+
+        .contact-info {
+            font-size: 1rem; /* 16px */
+            color: var(--color-text-secondary);
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+            justify-content: center;
+            gap: 0.5rem 1rem; /* 8px vertical, 15px horizontal gap */
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center; /* Vertically align icon and text */
+        }
+
+        .contact-info span i {
+            margin-right: 0.375rem; /* 6px */
+            color: var(--color-secondary); /* Use accent color for icons */
+        }
+
+        .contact-info a {
+            color: var(--color-link);
+            text-decoration: none;
+            transition: all 0.2s ease; /* Smooth transition for hover effects */
+            padding: 0.125rem 0.25rem; /* 2px 4px */
+            border-radius: var(--border-radius-small);
+        }
+
+        .contact-info a:hover,
+        .contact-info a:focus { /* Added focus state for accessibility */
+            text-decoration: none;
+            background-color: var(--color-accent-bg);
+            color: var(--color-link-hover);
+            outline: 1px solid var(--color-link-hover); /* Added for focus visibility */
+            outline-offset: 1px;
+        }
+
+        .resume-section {
+            margin-bottom: 2.5rem; /* 40px */
+        }
+
+        .resume-section h2 {
+            font-size: 1.7rem; /* ~27px */
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-secondary);
+            padding: 0.375rem 0.625rem; /* 6px 10px */
+            margin-bottom: 1.25rem; /* 20px */
+            font-weight: 600;
+            font-family: var(--font-secondary);
+            background-color: var(--bg-section-header);
+            border-radius: var(--border-radius-small) var(--border-radius-small) 0 0; /* Rounded top corners */
+        }
+
+        .resume-section > p { /* Targeting only direct p child for summary */
+            margin-top: 0; /* Remove default top margin if it's the first element */
+        }
+
+        .job-item, .education-item {
+            margin-bottom: 1.875rem; /* 30px */
+            padding: 1rem; /* 15px */
+            border-left: 3px solid var(--border-medium);
+            background-color: var(--bg-item);
+            border-radius: 0 var(--border-radius-item) var(--border-radius-item) 0; /* Rounded corners except left */
+            box-shadow: var(--shadow-item);
+            transition: all 0.2s ease; /* Smooth transition for hover */
+        }
+
+        .job-item:hover, .education-item:hover {
+            transform: translateY(-2px); /* Slight lift effect on hover */
+            box-shadow: var(--shadow-item-hover);
+            border-left-color: var(--color-secondary); /* Highlight border on hover */
+        }
+
+        .job-header, .education-header {
+            display: flex;
+            justify-content: space-between; /* Pushes title and dates to opposite ends */
+            align-items: baseline; /* Aligns text nicely */
+            margin-bottom: 0.5rem; /* 8px */
+            flex-wrap: wrap; /* Allow wrapping for very long titles or narrow screens */
+        }
+
+        .job-item h3, .education-item h3 {
+            font-size: 1.4rem; /* ~22px */
+            color: var(--color-text-heading-item);
+            margin: 0;
+            font-weight: 600;
+            font-family: var(--font-secondary);
+        }
+
+        .dates {
+            font-size: 0.95rem; /* ~15px */
+            color: var(--color-text-muted);
+            font-style: italic;
+            white-space: nowrap; /* Prevent dates from wrapping */
+            background-color: var(--color-accent-bg);
+            padding: 0.1875rem 0.5rem; /* 3px 8px */
+            border-radius: var(--border-radius-small);
+        }
+
+        .location {
+            font-size: 1rem; /* 16px */
+            color: var(--color-text-secondary);
+            margin-top: 0; /* Reset margin if header wrapped */
+            margin-bottom: 0.75rem; /* 12px */
+            display: flex;
+            align-items: center;
+        }
+
+        .location i {
+            margin-right: 0.375rem; /* 6px */
+            color: #7f8c8d; /* Kept specific as it's not a primary theme color, but looks good here */
+        }
+
+        ul {
+            padding-left: 1.25rem; /* 20px, standard list indentation */
+            margin-top: 0.625rem; /* 10px */
+            margin-bottom: 1rem; /* 15px */
+        }
+
+        li {
+            margin-bottom: 0.625rem; /* 10px */
+            color: var(--color-text-primary);
+            line-height: 1.7; /* Improved readability for list items */
+        }
+        /* Specificity for text color in lists to ensure it overrides other general text colors if needed */
+        .resume-section > p, /* Professional summary */
+        .job-item ul, .education-item ul, .accomplishments-list {
+            color: var(--color-text-primary);
+        }
+        .job-item li, .education-item li, .accomplishments-list li {
+            color: inherit; /* Inherit from parent ul to ensure consistency */
+        }
+
+
+        .skills-container {
+            display: flex;
+            flex-direction: column; /* Stack skill categories vertically */
+            gap: 1.25rem; /* 20px space between categories */
+        }
+
+        .skills-category {
+            margin-bottom: 0.625rem; /* 10px, reduced as gap is on parent */
+        }
+
+        .skills-category h3 {
+            font-weight: 600;
+            color: #34495e; /* A distinct, professional color for skill subheadings */
+            margin-bottom: 0.75rem; /* 12px */
+            font-size: 1.2rem; /* ~19px */
+            font-family: var(--font-secondary);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap; /* Allow skills to wrap to new lines */
+            gap: 0.625rem; /* 10px gap between skill items */
+            list-style: none; /* Remove default bullet points */
+            padding: 0; /* Remove default padding */
+        }
+
+        .skill-item {
+            background-color: var(--color-accent-bg);
+            padding: 0.375rem 0.875rem; /* 6px 14px, makes them look like tags */
+            border-radius: var(--border-radius-pill); /* Pill shape */
+            font-size: 0.9rem; /* ~14px */
+            color: var(--color-text-heading-item);
+            display: inline-block; /* Proper spacing and alignment */
+            border: 1px solid var(--border-skill);
+            transition: background-color 0.2s ease, color 0.2s ease; /* Smooth hover transition */
+        }
+        .skill-item:hover {
+            background-color: var(--color-secondary);
+            color: white;
+            border-color: var(--color-secondary);
+        }
+
+
+        .accomplishments-list li {
+            margin-bottom: 0.75rem; /* 12px */
+            line-height: 1.7;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .resume-container {
+                width: 95%; /* More width on smaller screens */
+                padding: 1.5rem; /* 25px, reduce padding */
+                margin: 1.25rem auto; /* 20px */
+            }
+
+            .resume-header h1 {
+                font-size: 2.2rem; /* ~35px, smaller name */
+            }
+
+            .resume-section h2 {
+                font-size: 1.4rem; /* ~22px, smaller section titles */
+            }
+
+            .job-item h3, .education-item h3 {
+                font-size: 1.15rem; /* ~18px, smaller job/education titles */
+            }
+
+            .contact-info {
+                font-size: 0.9rem; /* ~14px */
+                flex-direction: column; /* Stack contact items vertically */
+                align-items: center; /* Center items when stacked */
+                gap: 0.5rem; /* Adjust gap for stacked items */
+            }
+
+            .job-header, .education-header {
+                flex-direction: column; /* Stack title and dates */
+                align-items: flex-start; /* Align to start when stacked */
+            }
+
+            .dates {
+                margin-top: 0.5rem; /* 8px, add space when stacked below title */
+                margin-bottom: 0.3125rem; /* 5px */
+                font-size: 0.9rem; /* Slightly smaller dates */
+            }
+
+            .skill-item {
+                font-size: 0.85rem; /* ~13.6px */
+                padding: 0.3125rem 0.625rem; /* 5px 10px, smaller skill tags */
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 0.95rem; /* Slightly smaller base font for very small screens */
+            }
+            .resume-header h1 {
+                font-size: 2rem; /* 32px */
+            }
+
+            .resume-section h2 {
+                font-size: 1.3rem; /* ~21px */
+            }
+             .job-item h3, .education-item h3 {
+                font-size: 1.1rem; /* ~17.6px */
+            }
+
+            .resume-container {
+                padding: 1rem; /* 15px, further reduce padding */
+                margin: 1rem auto; /* Further reduce margin */
+            }
+            .contact-info {
+                gap: 0.3rem;
+            }
+            .contact-info span {
+                padding: 0.2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="resume-header">
+            <h1>TATVA DESAI</h1>
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i><a href="tel:+919499756756">+91 94997 56756</a></span>
+                <span><i class="fas fa-envelope"></i><a href="mailto:tatvadesai95@gmail.com">tatvadesai95@gmail.com</a></span>
+                <span><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/tatvadesai" target="_blank" rel="noopener noreferrer">linkedin.com/in/tatvadesai</a></span>
+                <span><i class="fas fa-globe"></i><a href="https://tatvadesai.github.io" target="_blank" rel="noopener noreferrer">tatvadesai.github.io</a></span>
+                <span><i class="fas fa-users"></i><a href="https://gatheraround.social" target="_blank" rel="noopener noreferrer">gatheraround.social</a></span>
+            </div>
+        </header>
+
+        <section class="resume-section">
+            <h2>Professional Summary</h2>
+            <p>Proactive and adaptable professional with excellent time management and problem-solving skills. Skilled in product development, financial analysis, and process optimization. Dedicated to driving team success and organizational growth through innovative and strategic solutions.</p>
+        </section>
+
+        <section class="resume-section">
+            <h2>Work Experience</h2>
+            <div class="job-item">
+                <div class="job-header">
+                    <h3>Founder, GatherAround</h3>
+                    <span class="dates">Jan 2025 – Present</span>
+                </div>
+                <p class="location"><i class="fas fa-map-marker-alt"></i><em>Dahod, Gujarat, India</em></p>
+                <ul>
+                    <li>Launched a platform for curated dinners, organizing 10 successful meetups in 3 months to enhance community engagement.</li>
+                    <li>Designed and implemented UX/UI using AI tools, improving user experience and platform functionality.</li>
+                    <li>Developed custom internal tools to streamline operations and boost efficiency.</li>
+                </ul>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <h3>Apprentice</h3>
+                    <span class="dates">Dec 2021 – Present</span>
+                </div>
+                <p class="location"><i class="fas fa-map-marker-alt"></i><em>Family Beverage Distribution Business, Dahod, Gujarat, India</em></p>
+                <ul>
+                    <li>Gained expertise in data entry, analysis, and reporting through hands-on training.</li>
+                    <li>Developed software solutions for desktop and mobile platforms to support operations.</li>
+                    <li>Handled administrative tasks, including invoice creation and sales data management. Concurrent with GatherAround role.</li>
+                </ul>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <h3>Summer Intern</h3>
+                    <span class="dates">May 2023 – Jul 2023</span>
+                </div>
+                <p class="location"><i class="fas fa-map-marker-alt"></i><em>ASA Capital Management, Vadodara, Gujarat, India</em></p>
+                <ul>
+                    <li>Built Python-based tools, including an annotation extractor and volume-based filter for NSE200 securities.</li>
+                    <li>Developed a BART model-based sentiment classifier to analyze Google Reviews, aiding market research.</li>
+                    <li>Established a company Substack newsletter and compiled data for financial reports.</li>
+                    <li>Selected as the only university student for a competitive internship (3 shortlisted).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="education-header">
+                    <h3>BBA in Finance</h3>
+                    <span class="dates">May 2024</span>
+                </div>
+                <p class="location"><i class="fas fa-university"></i><em>Navrachana University, Vadodara, India</em></p>
+                <ul>
+                    <li>Graduated in top 5% of class with a GPA of 7.7/10.</li>
+                    <li>Completed research paper: "Algorithmic Trading: Opportunities & Challenges" as part of curriculum.</li>
+                    <li>Hosted "NUVcast" podcast to engage faculty and students.</li>
+                    <li>Runner-up for Outstanding Intern Award.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Technical</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">HTML/CSS</span>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">Figma</span>
+                        <span class="skill-item">Excel</span>
+                        <span class="skill-item">Replit</span>
+                        <span class="skill-item">Tally</span>
+                        <span class="skill-item">Notion</span>
+                        <span class="skill-item">Substack</span>
+                        <span class="skill-item">AI Tool Utilization</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Professional</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Financial Modeling</span>
+                        <span class="skill-item">Product Development</span>
+                        <span class="skill-item">UX/UI Design</span>
+                        <span class="skill-item">Data Analysis</span>
+                        <span class="skill-item">Strategic Thinking</span>
+                        <span class="skill-item">Team Collaboration</span>
+                        <span class="skill-item">Public Speaking</span>
+                        <span class="skill-item">Communication</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Accomplishments</h2>
+            <ul class="accomplishments-list">
+                <li>Runner-up, Nirma University E-cell Business Plan Competition, Mar 2025.</li>
+                <li>Achieved All India Rank 345 out of 30,000 candidates and invited for interview at IIM Indore.</li>
+                <li>Created automation tools to optimize workflows for multiple business applications.</li>
+            </ul>
+        </section>
+
+    </div> </body>
+</html> 
