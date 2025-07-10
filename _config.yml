@@ -10,7 +10,7 @@ email: tatvadesai95@gmail.com
 description: >-
   pathologically curious
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "tatvadesai.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tatvadesai.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tatvadesai
 github_username: tatvadesai
 linkedin_username: tatvadesai
