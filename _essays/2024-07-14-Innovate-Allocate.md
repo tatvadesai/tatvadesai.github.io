@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: essay
 title: "Innovate or Allocate."
 date: 2024-07-14
 ---
