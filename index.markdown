@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 ---
 <div
     class="min-h-screen"
@@ -11,10 +11,10 @@ layout: home
         style="background-color: #321a20"
     >
         <div class="flex space-x-4 text-sm">
-            <a href="/essays" class="hover:opacity-70 transition-opacity">
+            <a href="/essays.html" class="hover:opacity-70 transition-opacity">
                 Essays
             </a>
-            <a href="/about" class="hover:opacity-70 transition-opacity">
+            <a href="/about.markdown" class="hover:opacity-70 transition-opacity">
                 About
             </a>
         </div>
@@ -67,7 +67,7 @@ layout: home
                         writing
                     </h3>
                     <ul class="space-y-3 text-sm opacity-90">
-                        {% for post in site.essays limit: 5 %}
+                        {% for post in site.essays %}
                         <li
                             class="hover:opacity-70 cursor-pointer transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
                         >
@@ -89,12 +89,12 @@ layout: home
                         <li
                             class="hover:opacity-70 cursor-pointer transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
                         >
-                           <a href="https://gatheraround.social">GatherAround</a>
+                           <a href="https://gatheraround.com">GatherAround</a>
                         </li>
                         <li
                             class="hover:opacity-70 cursor-pointer transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
                         >
-                            <a href="https://pritenterprise.vercel.app">family biz</a>
+                            <a href="https://tatvadesai.github.io/family-biz">family biz</a>
                         </li>
                     </ul>
                 </div>
@@ -111,7 +111,7 @@ layout: home
                         <li
                             class="hover:opacity-70 cursor-pointer transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
                         >
-                            <a href="https://www.youtube.com/playlist?list=PLxmCgjTVWU2kVCWkxsdq2Ps4jYO3TyuA-&amp;si=bU2f1_spgx-YpNqk" target="_blank" rel="noopener noreferrer">What did you get done this week?</a>
+                            What did you get done this week?
                         </li>
                     </ul>
                 </div>
@@ -126,7 +126,7 @@ layout: home
                 </p>
                 <div class="flex flex-wrap gap-6 text-sm mb-8">
                     <a
-                        href="mailto:tatvadesai95@gmail.com"
+                        href="mailto:tatva @example.com"
                         class="hover:opacity-70 transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
                         style="color: #f9e9b1"
                     >
@@ -152,9 +152,9 @@ layout: home
                     </a>
                 </div>
                 <p class="text-sm opacity-75">
-                    you can also subscribe to my substack
+                    you can also{' '}
                     <a
-                        href="https://substack.com/@tatvadesai"
+                        href="https://substack.com/ @tatvadesai"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="hover:opacity-70 transition-opacity underline underline-offset-2"
