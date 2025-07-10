@@ -5,25 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    <link href="https://api.fonts.coollabs.io/css2?family=Amulya&family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <nav>
-        {% unless page.url == "/" %}
-        <a href="/">Home</a>
-        {% endunless %}
-        <a href="/essays">Essays</a>
-        <a href="/about">About</a>
-    </nav>
-    
-    <div class="container">
-        <div class="grid-layout">
-            <div class="content-wrapper">
-                <div>
-                    {{ content }}
-                </div>
-            </div>
-        </div>
-    </div>
+    {{ content }}
 </body>
 </html>

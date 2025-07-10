@@ -1,26 +1,169 @@
 ---
 layout: default
 ---
+<div
+    class="min-h-screen"
+    style="background-color: #321a20; color: #fff5f0"
+>
+    <!-- Fixed Navigation -->
+    <nav
+        class="fixed top-5 right-5 z-10 rounded-lg px-4 py-2"
+        style="background-color: #321a20"
+    >
+        <div class="flex space-x-4 text-sm">
+            <a href="/essays.html" class="hover:opacity-70 transition-opacity">
+                Essays
+            </a>
+            <a href="/about.markdown" class="hover:opacity-70 transition-opacity">
+                About
+            </a>
+        </div>
+    </nav>
 
-<h1>Tatva Desai</h1>
-<h2 class="subtitle">pathologically curious</h2>
+    <!-- Main Content -->
 
-<div class="main-content">
-    <p>I like to build stuff. poems, stories, websites, brands, music, businesses.... <br><I style="color: var(--text-accent)">wherever curiosity takes me.</I></p>
-</div>
+    <div>
+        <div
+            class="pt-24 px-5 pb-10 md:pt-28 md:px-20 max-w-4xl h-[898px] w-[1160px]"
+        >
+            <!-- Header -->
+            <h1
+                class="text-4xl font-bold mb-2"
+                style="
+                    letter-spacing: 2px;
+                    font-family: system-ui, -apple-system, sans-serif;
+                "
+            >
+                Tatva Desai
+            </h1>
 
-<div class="section">
-    <h3 style="font-weight: normal">A few things I've worked on</h3>
-    <div class="links-group">
-        <a href="https://www.gatheraround.social">GatherAround</a>
-        <a href="https://pritenterprise.vercel.app">family biz</a>
-    </div>
-</div>
+            <h2 class="text-xl mb-8" style="color: #f9e9b1">
+                pathologically curious
+            </h2>
 
-<div class="section">
-    <h3 style="font-weight: normal">Say hello</h3>
-    <div class="links-group">
-        <a href="mailto:tatvadesai95@gmail.com">Email</a>
-        <a href="https://twitter.com/tatvadesai">Twitter</a>
+            <!-- Main Content -->
+            <div class="mb-12">
+                <p class="text-base leading-6 mb-8">
+                    I like to build stuff. poems, stories, websites, brands, music,
+                    businesses.... <br />
+                    <em style="color: #f9e9b1">
+                        wherever curiosity takes me.
+                    </em>
+                </p>
+            </div>
+
+            <!-- Works Section -->
+
+            <!-- Contact Section -->
+
+            <!-- Sections -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Writings -->
+                <div class="group">
+                    <h3
+                        class="text-lg font-medium mb-5 tracking-wide"
+                        style="color: #f9e9b1"
+                    >
+                        writing
+                    </h3>
+                    <ul class="space-y-3 text-sm opacity-90">
+                        {% for post in site.essays %}
+                        <li
+                            class="hover:opacity-70 cursor-pointer transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
+                        >
+                           <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- Operating -->
+                <div class="group">
+                    <h3
+                        class="text-lg font-medium mb-5 tracking-wide"
+                        style="color: #f9e9b1"
+                    >
+                        operating
+                    </h3>
+                    <ul class="space-y-3 text-sm opacity-90">
+                        <li
+                            class="hover:opacity-70 cursor-pointer transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
+                        >
+                           <a href="https://gatheraround.com">GatherAround</a>
+                        </li>
+                        <li
+                            class="hover:opacity-70 cursor-pointer transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
+                        >
+                            <a href="https://tatvadesai.github.io/family-biz">family biz</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Miscellaneous -->
+                <div class="group">
+                    <h3
+                        class="text-lg font-medium mb-5 tracking-wide"
+                        style="color: #f9e9b1"
+                    >
+                        miscellaneous
+                    </h3>
+                    <ul class="space-y-3 text-sm opacity-90">
+                        <li
+                            class="hover:opacity-70 cursor-pointer transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
+                        >
+                            What did you get done this week?
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div
+                class="mt-20 pt-8 border-t border-[#4a3a3f] border-opacity-30"
+            >
+                <p class="text-base mb-6 opacity-90">
+                    you can contact me here:
+                </p>
+                <div class="flex flex-wrap gap-6 text-sm mb-8">
+                    <a
+                        href="mailto:tatva @example.com"
+                        class="hover:opacity-70 transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
+                        style="color: #f9e9b1"
+                    >
+                        email
+                    </a>
+                    <a
+                        href="https://twitter.com/tatvadesai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:opacity-70 transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
+                        style="color: #f9e9b1"
+                    >
+                        twitter
+                    </a>
+                    <a
+                        href="https://linkedin.com/in/tatvadesai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:opacity-70 transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
+                        style="color: #f9e9b1"
+                    >
+                        linkedin
+                    </a>
+                </div>
+                <p class="text-sm opacity-75">
+                    you can also{' '}
+                    <a
+                        href="https://substack.com/ @tatvadesai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:opacity-70 transition-opacity underline underline-offset-2"
+                        style="color: #f9e9b1"
+                    >
+                        subscribe to my substack
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
 </div>
