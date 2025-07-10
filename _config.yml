@@ -16,9 +16,9 @@ github_username: tatvadesai
 linkedin_username: tatvadesai
 
 # Build settings
-theme: minima 
-plugins:
-  - jekyll-feed
+# theme: minima 
+# plugins:
+#   - jekyll-feed
 
 collections:
   essays:
