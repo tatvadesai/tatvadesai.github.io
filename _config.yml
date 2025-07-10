@@ -5,7 +5,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Tatva Desai
+title: tatva desai
 email: tatvadesai95@gmail.com
 description: >-
   pathologically curious

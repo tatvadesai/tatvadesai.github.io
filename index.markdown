@@ -12,10 +12,10 @@ layout: home
     >
         <div class="flex space-x-4 text-sm">
             <a href="/essays" class="hover:opacity-70 transition-opacity">
-                Essays
+                essays
             </a>
             <a href="/about" class="hover:opacity-70 transition-opacity">
-                About
+                about
             </a>
         </div>
     </nav>
@@ -34,7 +34,7 @@ layout: home
                     font-family: system-ui, -apple-system, sans-serif;
                 "
             >
-                Tatva Desai
+                tatva desai
             </h1>
 
             <h2 class="text-xl mb-8" style="color: #f9e9b1">
@@ -44,7 +44,7 @@ layout: home
             <!-- Main Content -->
             <div class="mb-12">
                 <p class="text-base leading-6 mb-8">
-                    I like to build stuff. poems, stories, websites, brands, music,
+                    i like to build stuff. poems, stories, websites, brands, music,
                     businesses.... <br />
                     <em style="color: #f9e9b1">
                         wherever curiosity takes me.
@@ -89,7 +89,7 @@ layout: home
                         <li
                             class="hover:opacity-70 cursor-pointer transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
                         >
-                           <a href="https://gatheraround.social">GatherAround</a>
+                           <a href="https://gatheraround.social">gatheraround</a>
                         </li>
                         <li
                             class="hover:opacity-70 cursor-pointer transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
@@ -111,7 +111,7 @@ layout: home
                         <li
                             class="hover:opacity-70 cursor-pointer transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
                         >
-                            <a href="https://www.youtube.com/playlist?list=PLxmCgjTVWU2kVCWkxsdq2Ps4jYO3TyuA-&amp;si=bU2f1_spgx-YpNqk" target="_blank" rel="noopener noreferrer">What did you get done this week?</a>
+                            <a href="https://www.youtube.com/playlist?list=PLxmCgjTVWU2kVCWkxsdq2Ps4jYO3TyuA-&amp;si=bU2f1_spgx-YpNqk" target="_blank" rel="noopener noreferrer">what did you get done this week?</a>
                         </li>
                     </ul>
                 </div>
@@ -126,7 +126,7 @@ layout: home
                 </p>
                 <div class="flex flex-wrap gap-6 text-sm mb-8">
                     <a
-                        href="mailto:tatva @example.com"
+                        href="mailto:tatvadesai95@gmail.com"
                         class="hover:opacity-70 transition-opacity border-l border-transparent hover:border-[#f9e9b1] pl-3 hover:pl-4 transition-all duration-200"
                         style="color: #f9e9b1"
                     >
