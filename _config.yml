@@ -23,6 +23,7 @@ linkedin_username: tatvadesai
 collections:
   essays:
     output: true
+    permalink: /essays/:slug/
 
 defaults:
   - scope:
