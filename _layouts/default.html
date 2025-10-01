@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | absolute_url }}">
     <link href="https://api.fonts.coollabs.io/css2?family=Amulya&family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+    {%- feed_meta -%}
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+        {%- include google-analytics.html -%}
+    {%- endif -%}
 </head>
 <body>
     <nav>
@@ -28,7 +32,7 @@
 
     {% unless page.url == "/" %}
     <footer style="text-align: center; padding: 2rem 0; font-size: 0.8rem; color: var(--text-accent);">
-        <p>website design stolen from HENRY MODISETT</p>
+        <p>website design inspired by HENRY MODISETT</p>
     </footer>
     {% endunless %}
 </body>
