@@ -347,7 +347,7 @@ nav {
     .content-area {
         padding: 40px 15px;
     }
-    
+
     .main-title {
         font-size: 32px;
     }
@@ -361,19 +361,19 @@ nav {
         padding: 8px;
         z-index: 1000;
     }
-    
+
     .content-area {
         padding: 100px 20px 40px;
     }
-    
+
     .main-title {
         font-size: 28px;
     }
-    
+
     .subtitle {
         font-size: 20px;
     }
-    
+
     /* Make content grid stack on mobile for better readability */
     .content-grid {
         margin-top: 15px;
@@ -385,23 +385,23 @@ nav {
     .content-area {
         padding: 90px 15px 30px;
     }
-    
+
     .main-title {
         font-size: 26px;
     }
-    
+
     .subtitle {
         font-size: 18px;
     }
-    
+
     .nav-links {
         gap: 12px;
     }
-    
+
     .nav-link {
         font-size: 15px;
     }
-    
+
     .intro-section {
         margin: 15px 0;
     }
@@ -450,7 +450,7 @@ nav {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+
     .content-section {
         margin-bottom: 30px;
     }
@@ -666,8 +666,8 @@ nav {
 }
 
 .essay-content blockquote::before {
-    content: """;
-    font-size: 3.5rem;
+    content: "" ";
+ font-size: 3.5rem;
     position: absolute;
     left: 10px;
     top: -5px;
@@ -676,7 +676,8 @@ nav {
     font-family: serif;
 }
 
-.essay-content ul, .essay-content ol {
+.essay-content ul,
+.essay-content ol {
     padding-left: 1.8rem;
     margin-bottom: 1.6rem;
 }
@@ -735,15 +736,15 @@ nav {
         padding: 40px 15px;
         max-width: 650px;
     }
-    
+
     .essay-content {
         font-size: 17px;
     }
-    
+
     .essay-content h2 {
         font-size: 1.6rem;
     }
-    
+
     .essay-content h3 {
         font-size: 1.3rem;
     }
@@ -754,19 +755,19 @@ nav {
         padding: 35px 12px;
         max-width: 100%;
     }
-    
+
     .essay-content {
         font-size: 16px;
     }
-    
+
     .essay-content h2 {
         font-size: 1.5rem;
     }
-    
+
     .essay-content h3 {
         font-size: 1.2rem;
     }
-    
+
     .essay-content blockquote {
         padding-left: 1rem;
     }

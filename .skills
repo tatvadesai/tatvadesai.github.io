@@ -1,0 +1,52 @@
+# Website Structure Documentation
+# tatvadesai.github.io - Personal Website
+
+## Technology Stack
+- **Generator**: Jekyll (Ruby-based static site generator)
+- **Styling**: Custom CSS with CSS variables (supports light/dark themes)
+- **Hosting**: GitHub Pages
+
+## Directory Structure
+
+```
+├── _config.yml          # Jekyll configuration
+├── _layouts/            # Page layout templates (3 layouts)
+├── _essays/             # Essay collection (2 essays)
+├── _posts/              # Blog posts organized by date
+├── assets/
+│   ├── css/             # Stylesheets
+│   └── skill-issue/     # Images for skill-issue page
+│       ├── shannon.jpeg      # Claude Shannon portrait
+│       ├── feynman.jpeg      # Richard Feynman portrait
+│       └── dhirubhai.jpeg    # Dhirubhai Ambani portrait
+├── cv/                  # CV/Resume section
+└── _site/               # Generated static site (auto-built)
+```
+
+## Main Pages
+- **index.markdown**     → Homepage (/)
+- **about.markdown**     → About page (/about/)
+- **skill-issue.markdown** → Skill Issue gallery (/skill-issue/)
+- **essays.html**        → Essays listing (/essays/)
+- **404.html**           → Custom 404 error page
+
+## Key Files
+- **Gemfile** / **Gemfile.lock** → Ruby dependencies
+- **.gitignore** → Git ignore patterns
+- **favicon.ico** → Site favicon
+
+## CSS Variables
+Uses CSS custom properties for theming:
+- `--text-accent` → Accent text color (gold/amber in dark theme)
+
+## skill-issue Page Structure
+A visual gallery page featuring portraits of influential people:
+- Grid layout using CSS Grid (auto-fit, min 400px)
+- Square aspect ratio images with object-fit: cover
+- Gradient overlay with name labels
+- Currently features: Claude Shannon, Richard Feynman, Dhirubhai Ambani
+
+## Notes
+- Images should be placed in /assets/skill-issue/ 
+- Use leading slash for absolute paths in src attributes (e.g., /assets/skill-issue/image.jpeg)
+- JPEG format preferred for photographs
