@@ -1,9 +1,13 @@
 ---
 layout: default
+title: essays
+permalink: /essays/
 ---
 
+<h1 class="page-title">essays</h1>
+
 <div class="essays-list">
-    {% for essay in site.essays %}
+    {% for essay in site.essays reversed %}
     <div class="essay-item">
         <a href="{{ essay.url }}" class="essay-link">
             <h3>{{ essay.title }}</h3>

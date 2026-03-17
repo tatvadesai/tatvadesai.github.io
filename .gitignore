@@ -3,5 +3,7 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+.DS_Store
+.claude/
 implementation-documentation.md
 website-modernization-tracker.md
