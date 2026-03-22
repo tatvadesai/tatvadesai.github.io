@@ -6,7 +6,7 @@
     <title>{{ site.title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     {%- feed_meta -%}
     {%- seo -%}
@@ -26,92 +26,80 @@
     </script>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="site-nav">
         <button class="dark-mode-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <a href="/essays" class="nav-link">essays</a>
         <a href="/about" class="nav-link">about</a>
         <a href="/skill-issue" class="nav-pill">skill issue</a>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <h1 class="hero-name">tatva desai</h1>
-        <p class="hero-tagline">pathologically curious</p>
-        <p class="hero-bio">i like to build stuff, and tinker around with poems, tech, books, businesses and.... wherever curiosity takes me.</p>
-    </section>
+    <main class="homepage">
+        <section class="hero-section animate-in">
+            <h1 class="hero-name">tatva desai</h1>
+        </section>
 
-    <!-- Work Section -->
-    <section class="work-section">
-        <div class="work-header">
-            <h2 class="work-title">what i'm up to</h2>
-            <p class="work-subtitle">a generalist doing generalist things</p>
-        </div>
-        <div class="work-columns">
-            <div>
-                <h3 class="work-col-title">Writing</h3>
-                <div class="work-col-items">
-                    {% for essay in site.essays %}
-                    <div class="work-item">
-                        <span class="work-item-dot"></span>
-                        <a href="{{ essay.url | relative_url }}" class="work-item-text">{{ essay.title }}</a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div>
-                <h3 class="work-col-title">Operating</h3>
-                <div class="work-col-items">
-                    <div class="work-item">
-                        <span class="work-item-dot"></span>
-                        <a href="https://gather-around.vercel.app" class="work-item-text">gatheraround</a>
-                    </div>
-                    <div class="work-item">
-                        <span class="work-item-dot"></span>
-                        <a href="https://pritenterprise.vercel.app" class="work-item-text">family biz</a>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3 class="work-col-title">Miscellaneous</h3>
-                <div class="work-col-items">
-                    <div class="work-item">
-                        <span class="work-item-dot"></span>
-                        <a href="https://www.youtube.com/playlist?list=PLxmCgjTVWU2kVCWkxsdq2Ps4jYO3TyuA-" target="_blank" rel="noopener noreferrer" class="work-item-text">what did you get done this week?</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <hr class="divider animate-in" style="--delay: 0.08s">
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-divider"></div>
-        <div class="footer-main">
-            <div>
-                <div class="footer-name">tatva desai</div>
-                <div class="footer-tagline">pathologically curious, perpetually building</div>
+        <section class="intro-section animate-in" style="--delay: 0.12s">
+            <p>i build things, write about ideas, and try to understand how the world works. i like to tinker around with poems, tech, books, businesses and wherever curiosity takes me.</p>
+            <p>i'm drawn to the intersection of finance, technology, and human behavior. i read everything i can get my hands on — from market microstructure to poetry — and i think the most interesting people are the ones who refuse to pick a lane.</p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="now-section reveal">
+            <h2 class="section-label">now</h2>
+            <ul class="now-list">
+                <li>studying business analytics at bits pilani, pilani</li>
+                <li>building <a href="https://gather-around.vercel.app" target="_blank" rel="noopener noreferrer">gatheraround</a> — curating dinners that bring interesting people to the same table</li>
+                <li>running operations at the <a href="https://pritenterprise.vercel.app" target="_blank" rel="noopener noreferrer">family beverage business</a></li>
+                <li>documenting the journey on <a href="https://substack.com/@tatvadesai" target="_blank" rel="noopener noreferrer">substack</a></li>
+            </ul>
+        </section>
+
+        <hr class="divider">
+
+        <section class="writing-section reveal" style="--delay: 0.05s">
+            <h2 class="section-label">writing</h2>
+            <div class="writing-list">
+                {% for essay in site.essays reversed %}
+                <a href="{{ essay.url | relative_url }}" class="writing-item">
+                    <span class="writing-title">{{ essay.title }}</span>
+                    <span class="writing-date">{{ essay.date | date: "%b %Y" }}</span>
+                </a>
+                {% endfor %}
             </div>
-            <div class="footer-right">
-                <div class="footer-links">
-                    <a href="mailto:tatvadesai95@gmail.com">email</a>
-                    <a href="https://twitter.com/tatvadesai" target="_blank" rel="noopener noreferrer">twitter</a>
-                    <a href="https://linkedin.com/in/tatvadesai" target="_blank" rel="noopener noreferrer">linkedin</a>
-                </div>
-                <a href="https://substack.com/@tatvadesai" target="_blank" rel="noopener noreferrer" class="footer-substack">documenting my MBA journey on substack →</a>
+            <p class="writing-note">also documenting my mba journey on <a href="https://substack.com/@tatvadesai" target="_blank" rel="noopener noreferrer">substack &rarr;</a></p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="connect-section reveal" style="--delay: 0.05s">
+            <div class="connect-links">
+                <a href="mailto:tatvadesai95@gmail.com">email</a>
+                <span class="connect-sep">&middot;</span>
+                <a href="https://twitter.com/tatvadesai" target="_blank" rel="noopener noreferrer">twitter</a>
+                <span class="connect-sep">&middot;</span>
+                <a href="https://linkedin.com/in/tatvadesai" target="_blank" rel="noopener noreferrer">linkedin</a>
+                <span class="connect-sep">&middot;</span>
+                <a href="https://substack.com/@tatvadesai" target="_blank" rel="noopener noreferrer">substack</a>
+                <span class="connect-sep">&middot;</span>
+                <a href="https://www.youtube.com/playlist?list=PLxmCgjTVWU2kVCWkxsdq2Ps4jYO3TyuA-" target="_blank" rel="noopener noreferrer">youtube</a>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <span class="footer-copyright">made with mass amounts of caffeine © 2025</span>
+            <p class="connect-tagline">pathologically curious, perpetually building</p>
+        </section>
+
+        <footer class="homepage-footer">
+            <span class="footer-copyright">made with mass amounts of caffeine &copy; 2025</span>
             <div class="status-pill">
                 <span class="status-dot"></span>
                 <span class="status-text">open to cool stuff</span>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </main>
 
     <script>
         function toggleTheme() {
@@ -121,6 +109,19 @@
             html.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
         }
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(function(el) {
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
