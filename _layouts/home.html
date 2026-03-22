@@ -6,7 +6,7 @@
     <title>{{ site.title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Newsreader:ital,wght@1,400&family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     {%- feed_meta -%}
     {%- seo -%}
@@ -37,30 +37,14 @@
     </nav>
 
     <main class="homepage">
-        <section class="hero-section animate-in">
-            <h1 class="hero-name">tatva desai</h1>
+        <h1 class="site-name animate-in">tatva desai</h1>
+
+        <section class="bio animate-in" style="--delay: 0.08s">
+            <p>i'm tatva. right now i'm doing an mba in business analytics at bits pilani. before this, i built <a href="https://gather-around.vercel.app" target="_blank" rel="noopener noreferrer">gatheraround</a> &mdash; a platform for curated dinners &mdash; and worked on my <a href="https://pritenterprise.vercel.app" target="_blank" rel="noopener noreferrer">family business</a> for a year right after my undergrad.</p>
+            <p>i'm fascinated by the places where finance, technology, and human behavior collide. i read everything i can, write about it sometimes, and think the most interesting ideas live at the edges between fields.</p>
         </section>
 
-        <hr class="divider animate-in" style="--delay: 0.08s">
-
-        <section class="intro-section animate-in" style="--delay: 0.12s">
-            <p>i build things, write about ideas, and try to understand how the world works. i like to tinker around with poems, tech, books, businesses and wherever curiosity takes me.</p>
-            <p>i'm drawn to the intersection of finance, technology, and human behavior. i read everything i can get my hands on — from market microstructure to poetry — and i think the most interesting people are the ones who refuse to pick a lane.</p>
-        </section>
-
-        <hr class="divider">
-
-        <section class="now-section reveal">
-            <h2 class="section-label">now</h2>
-            <ul class="now-list">
-                <li>studying business analytics at bits pilani, pilani</li>
-                <li>documenting the journey on <a href="https://substack.com/@tatvadesai" target="_blank" rel="noopener noreferrer">substack</a></li>
-            </ul>
-        </section>
-
-        <hr class="divider">
-
-        <section class="writing-section reveal" style="--delay: 0.05s">
+        <section class="homepage-section reveal" style="--delay: 0.05s">
             <h2 class="section-label">writing</h2>
             <div class="writing-list">
                 {% for essay in site.essays reversed %}
@@ -70,12 +54,10 @@
                 </a>
                 {% endfor %}
             </div>
-            <p class="writing-note">also documenting my mba journey on <a href="https://substack.com/@tatvadesai" target="_blank" rel="noopener noreferrer">substack &rarr;</a></p>
+            <p class="writing-note">also documenting my mba journey on <a href="https://illiquidthoughts.substack.com/" target="_blank" rel="noopener noreferrer">substack &rarr;</a></p>
         </section>
 
-        <hr class="divider">
-
-        <section class="connect-section reveal" style="--delay: 0.05s">
+        <section class="homepage-section reveal" style="--delay: 0.05s">
             <div class="connect-links">
                 <a href="mailto:tatvadesai95@gmail.com">email</a>
                 <span class="connect-sep">&middot;</span>
@@ -83,7 +65,7 @@
                 <span class="connect-sep">&middot;</span>
                 <a href="https://linkedin.com/in/tatvadesai" target="_blank" rel="noopener noreferrer">linkedin</a>
                 <span class="connect-sep">&middot;</span>
-                <a href="https://substack.com/@tatvadesai" target="_blank" rel="noopener noreferrer">substack</a>
+                <a href="https://illiquidthoughts.substack.com/" target="_blank" rel="noopener noreferrer">substack</a>
                 <span class="connect-sep">&middot;</span>
                 <a href="https://www.youtube.com/playlist?list=PLxmCgjTVWU2kVCWkxsdq2Ps4jYO3TyuA-" target="_blank" rel="noopener noreferrer">youtube</a>
             </div>
@@ -92,10 +74,10 @@
 
         <footer class="homepage-footer">
             <span class="footer-copyright">made with mass amounts of caffeine &copy; 2025</span>
-            <div class="status-pill">
+            <a href="mailto:tatvadesai95@gmail.com" class="status-pill">
                 <span class="status-dot"></span>
                 <span class="status-text">open to cool stuff</span>
-            </div>
+            </a>
         </footer>
     </main>
 
@@ -120,6 +102,7 @@
         document.querySelectorAll('.reveal').forEach(function(el) {
             observer.observe(el);
         });
+
     </script>
 </body>
 </html>
