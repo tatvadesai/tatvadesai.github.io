@@ -6,7 +6,7 @@
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;1,400&family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | absolute_url }}">
     {%- feed_meta -%}
     {%- seo -%}
@@ -57,11 +57,11 @@
                     <a href="https://twitter.com/tatvadesai" target="_blank" rel="noopener noreferrer">twitter</a>
                     <a href="https://linkedin.com/in/tatvadesai" target="_blank" rel="noopener noreferrer">linkedin</a>
                 </div>
-                <a href="https://substack.com/@tatvadesai" target="_blank" rel="noopener noreferrer" class="footer-substack">documenting my MBA journey on substack →</a>
+                <a href="https://substack.com/@tatvadesai" target="_blank" rel="noopener noreferrer" class="footer-substack">documenting my MBA journey on substack &rarr;</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <span class="footer-copyright">made with mass amounts of caffeine © 2025</span>
+            <span class="footer-copyright">made with mass amounts of caffeine &copy; 2025</span>
         </div>
     </footer>
 
@@ -73,6 +73,25 @@
             html.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
         }
+
+        // Staggered scroll-reveal for inner page elements
+        (function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+            var selectors = '.blog-card, .essay-item, .person-item';
+            document.querySelectorAll(selectors).forEach(function(el, i) {
+                el.classList.add('reveal');
+                el.style.setProperty('--delay', (i * 0.06) + 's');
+                observer.observe(el);
+            });
+        })();
     </script>
 </body>
 </html>
