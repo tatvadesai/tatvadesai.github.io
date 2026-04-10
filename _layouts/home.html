@@ -36,49 +36,58 @@
         <a href="/skill-issue" class="nav-pill">skill issue</a>
     </nav>
 
-    <main class="homepage">
-        <h1 class="site-name animate-in">tatva desai</h1>
+    <main class="homepage-split animate-in">
+        <div class="homepage-content">
+            <h1 class="site-name">tatva desai</h1>
 
-        <section class="bio animate-in" style="--delay: 0.08s">
-            <p>i'm tatva. right now i'm doing an mba in business analytics at bits pilani. before this, i built <a href="https://gather-around.vercel.app" target="_blank" rel="noopener noreferrer">gatheraround</a> &mdash; a platform for curated dinners &mdash; and worked on my <a href="https://pritenterprise.vercel.app" target="_blank" rel="noopener noreferrer">family business</a> for a year right after my undergrad.</p>
-            <p>i'm fascinated by the places where finance, technology, and human behavior collide. i read everything i can, write about it sometimes, and think the most interesting ideas live at the edges between fields.</p>
-        </section>
+            <section class="bio">
+                <p>i'm tatva. right now i'm doing an mba in business analytics at bits pilani. before this, i built <a href="https://gather-around.vercel.app" target="_blank" rel="noopener noreferrer">gatheraround</a> &mdash; a platform for curated dinners &mdash; and worked on my <a href="https://pritenterprise.vercel.app" target="_blank" rel="noopener noreferrer">family business</a> for a year right after my undergrad.</p>
+                <p>i'm fascinated by the places where finance, technology, and human behavior collide. i read everything i can, write about it sometimes, and think the most interesting ideas live at the edges between fields.</p>
+            </section>
 
-        <section class="homepage-section reveal" style="--delay: 0.05s">
-            <h2 class="section-label">writing</h2>
-            <div class="writing-list">
-                {% for essay in site.essays reversed %}
-                <a href="{{ essay.url | relative_url }}" class="writing-item">
-                    <span class="writing-title">{{ essay.title }}</span>
-                    <span class="writing-date">{{ essay.date | date: "%b %Y" }}</span>
+            <section class="homepage-section reveal" style="--delay: 0.05s">
+                <h2 class="section-label">writing</h2>
+                <div class="writing-list">
+                    {% for essay in site.essays reversed %}
+                    <a href="{{ essay.url | relative_url }}" class="writing-item">
+                        <span class="writing-title">{{ essay.title }}</span>
+                        <span class="writing-date">{{ essay.date | date: "%b %Y" }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+                <p class="writing-note">also documenting my mba journey on <a href="https://illiquidthoughts.substack.com/" target="_blank" rel="noopener noreferrer">substack &rarr;</a></p>
+            </section>
+
+            <section class="homepage-section reveal" style="--delay: 0.05s">
+                <div class="connect-links">
+                    <a href="mailto:tatvadesai95@gmail.com">email</a>
+                    <span class="connect-sep">&middot;</span>
+                    <a href="https://twitter.com/tatvadesai" target="_blank" rel="noopener noreferrer">twitter</a>
+                    <span class="connect-sep">&middot;</span>
+                    <a href="https://linkedin.com/in/tatvadesai" target="_blank" rel="noopener noreferrer">linkedin</a>
+                    <span class="connect-sep">&middot;</span>
+                    <a href="https://illiquidthoughts.substack.com/" target="_blank" rel="noopener noreferrer">substack</a>
+                    <span class="connect-sep">&middot;</span>
+                    <a href="https://www.youtube.com/playlist?list=PLxmCgjTVWU2kVCWkxsdq2Ps4jYO3TyuA-" target="_blank" rel="noopener noreferrer">youtube</a>
+                </div>
+                <p class="connect-tagline">pathologically curious, perpetually building</p>
+            </section>
+
+            <footer class="homepage-footer">
+                <span class="footer-copyright">made with mass amounts of caffeine &copy; 2025</span>
+                <a href="mailto:tatvadesai95@gmail.com" class="status-pill">
+                    <span class="status-dot"></span>
+                    <span class="status-text">open to cool stuff</span>
                 </a>
-                {% endfor %}
-            </div>
-            <p class="writing-note">also documenting my mba journey on <a href="https://illiquidthoughts.substack.com/" target="_blank" rel="noopener noreferrer">substack &rarr;</a></p>
-        </section>
+            </footer>
+        </div>
 
-        <section class="homepage-section reveal" style="--delay: 0.05s">
-            <div class="connect-links">
-                <a href="mailto:tatvadesai95@gmail.com">email</a>
-                <span class="connect-sep">&middot;</span>
-                <a href="https://twitter.com/tatvadesai" target="_blank" rel="noopener noreferrer">twitter</a>
-                <span class="connect-sep">&middot;</span>
-                <a href="https://linkedin.com/in/tatvadesai" target="_blank" rel="noopener noreferrer">linkedin</a>
-                <span class="connect-sep">&middot;</span>
-                <a href="https://illiquidthoughts.substack.com/" target="_blank" rel="noopener noreferrer">substack</a>
-                <span class="connect-sep">&middot;</span>
-                <a href="https://www.youtube.com/playlist?list=PLxmCgjTVWU2kVCWkxsdq2Ps4jYO3TyuA-" target="_blank" rel="noopener noreferrer">youtube</a>
-            </div>
-            <p class="connect-tagline">pathologically curious, perpetually building</p>
-        </section>
-
-        <footer class="homepage-footer">
-            <span class="footer-copyright">made with mass amounts of caffeine &copy; 2025</span>
-            <a href="mailto:tatvadesai95@gmail.com" class="status-pill">
-                <span class="status-dot"></span>
-                <span class="status-text">open to cool stuff</span>
-            </a>
-        </footer>
+        <div class="homepage-hero">
+            <picture>
+                <source srcset="{{ '/assets/img/tatva.webp' | relative_url }}" type="image/webp">
+                <img src="{{ '/assets/img/tatva.jpg' | relative_url }}" alt="Tatva sitting on a rock in the mountains" width="900" height="1200" loading="eager">
+            </picture>
+        </div>
     </main>
 
     <script>
