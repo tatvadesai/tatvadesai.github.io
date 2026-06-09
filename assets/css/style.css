@@ -390,6 +390,15 @@ a { color: inherit; text-decoration: none; }
     margin-bottom: 2.5rem;
 }
 
+.software-intro.subscript-like {
+    font-size: 13px;
+    margin-bottom: 2rem;
+    display: inline-block;
+    transform: translateY(0.25em);
+    line-height: 1.1;
+    opacity: 0.95;
+}
+
 .software-list {
     display: flex;
     flex-direction: column;
