@@ -6,7 +6,7 @@
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Newsreader:ital,wght@1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | absolute_url }}">
     {%- feed_meta -%}
     {%- seo -%}
@@ -34,6 +34,7 @@
         </button>
         <a href="/" class="nav-link">home</a>
         <a href="/essays" class="nav-link{% if page.url == '/essays/' or page.url contains '/essays/' %} active{% endif %}">essays</a>
+        <a href="/personal-software" class="nav-link{% if page.url == '/personal-software/' %} active{% endif %}">software</a>
         <a href="/about" class="nav-link{% if page.url == '/about/' %} active{% endif %}">about</a>
         <a href="/skill-issue" class="nav-pill{% if page.url == '/skill-issue/' %} active{% endif %}">skill issue</a>
     </nav>
@@ -85,7 +86,7 @@
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-            var selectors = '.blog-card, .essay-item, .person-item';
+            var selectors = '.blog-card, .essay-item, .person-item, .software-item';
             document.querySelectorAll(selectors).forEach(function(el, i) {
                 el.classList.add('reveal');
                 el.style.setProperty('--delay', (i * 0.06) + 's');
