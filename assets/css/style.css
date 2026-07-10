@@ -19,6 +19,22 @@
     --transition: 0.15s ease;
 }
 
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300 500;
+    font-display: swap;
+    src: url('../fonts/inter-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Young Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/young-serif-latin.woff2') format('woff2');
+}
+
 [data-theme="dark"] {
     --bg: #111111;
     --bg-alt: #1A1A1A;
