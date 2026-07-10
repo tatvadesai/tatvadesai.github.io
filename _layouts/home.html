@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     {%- feed_meta -%}
     {%- seo -%}
     {%- if site.posthog_api_key and site.posthog_host -%}
@@ -47,6 +48,25 @@
             </section>
 
             <section class="homepage-section reveal" style="--delay: 0.05s">
+                <h2 class="section-label">software</h2>
+                <div class="writing-list">
+                    <a href="https://github.com/tatvadesai/study-terminal" class="writing-item" target="_blank" rel="noopener noreferrer">
+                        <span class="writing-title">study terminal</span>
+                        <span class="writing-date">offline exam-prep os</span>
+                    </a>
+                    <a href="https://gather-around.vercel.app" class="writing-item" target="_blank" rel="noopener noreferrer">
+                        <span class="writing-title">gatheraround</span>
+                        <span class="writing-date">curated dinners</span>
+                    </a>
+                    <a href="https://github.com/tatvadesai/luminaries" class="writing-item" target="_blank" rel="noopener noreferrer">
+                        <span class="writing-title">luminaries</span>
+                        <span class="writing-date">daily driver</span>
+                    </a>
+                </div>
+                <p class="writing-note"><a href="{{ '/personal-software/' | relative_url }}">all software &rarr;</a></p>
+            </section>
+
+            <section class="homepage-section reveal" style="--delay: 0.1s">
                 <h2 class="section-label">writing</h2>
                 <div class="writing-list">
                     {% for essay in site.essays reversed %}
