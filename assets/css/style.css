@@ -712,27 +712,27 @@ a { color: inherit; text-decoration: none; }
     .homepage-hero img {
         max-height: 60vh;
     }
-    .essay-signup-row { flex-direction: column; align-items: stretch; }
-    .essay-signup-row button { width: 100%; }
+    .signup-row { flex-direction: column; align-items: stretch; }
+    .signup-row button { width: 100%; }
 }
 
-/* ===== Essay email signup ===== */
-.essay-signup {
+/* ===== Email signup (site-wide) ===== */
+.signup {
     margin-top: 3.5rem;
     padding-top: 2rem;
     border-top: 1px solid var(--border);
 }
-.essay-signup-copy {
+.signup-copy {
     font-size: 14px;
     color: var(--text-muted);
     margin: 0 0 14px;
 }
-.essay-signup-row {
+.signup-row {
     display: flex;
     gap: 8px;
     align-items: center;
 }
-.essay-signup-row input[type="email"] {
+.signup-row input[type="email"] {
     flex: 1;
     min-width: 0;
     font-family: var(--sans);
@@ -744,12 +744,12 @@ a { color: inherit; text-decoration: none; }
     padding: 9px 12px;
     transition: border-color var(--transition);
 }
-.essay-signup-row input[type="email"]::placeholder { color: var(--text-muted); }
-.essay-signup-row input[type="email"]:focus {
+.signup-row input[type="email"]::placeholder { color: var(--text-muted); }
+.signup-row input[type="email"]:focus {
     outline: none;
     border-color: var(--accent);
 }
-.essay-signup-row button {
+.signup-row button {
     font-family: var(--sans);
     font-size: 14px;
     color: #fff;
@@ -761,8 +761,8 @@ a { color: inherit; text-decoration: none; }
     flex-shrink: 0;
     transition: opacity var(--transition);
 }
-.essay-signup-row button:hover { opacity: 0.85; }
-.essay-signup-check {
+.signup-row button:hover { opacity: 0.85; }
+.signup-check {
     display: flex;
     align-items: flex-start;
     gap: 8px;
@@ -772,18 +772,18 @@ a { color: inherit; text-decoration: none; }
     cursor: pointer;
     line-height: 1.4;
 }
-.essay-signup-check input[type="checkbox"] {
+.signup-check input[type="checkbox"] {
     margin-top: 1px;
     accent-color: var(--accent);
     cursor: pointer;
     flex-shrink: 0;
 }
-.essay-signup-check a {
+.signup-check a {
     color: var(--accent);
     transition: opacity var(--transition);
 }
-.essay-signup-check a:hover { opacity: 0.7; }
-.essay-signup-hp {
+.signup-check a:hover { opacity: 0.7; }
+.signup-hp {
     position: absolute;
     left: -9999px;
     width: 1px;

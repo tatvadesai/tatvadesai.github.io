@@ -1,0 +1,34 @@
+{%- if site.signup_form_url and site.signup_form_url != "" -%}
+<section class="signup">
+    <form class="signup-form" id="site-signup-form">
+        <p class="signup-copy">i occasionally post here. no spam.</p>
+        <div class="signup-row">
+            <input type="email" name="email" placeholder="you@email.com" required aria-label="email address">
+            <button type="submit">join</button>
+        </div>
+        <label class="signup-check">
+            <input type="checkbox" name="finance">
+            <span>also send me finance notes from <a href="https://ekagritventures.github.io" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">ekagrit ventures</a></span>
+        </label>
+        <input type="text" name="website" class="signup-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    </form>
+</section>
+<script>
+    (function() {
+        var form = document.getElementById('site-signup-form');
+        if (!form) return;
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (form.dataset.sent) return;            // guard against double-submit
+            form.dataset.sent = '1';
+            var data = new FormData(form);
+            data.set('finance', form.finance.checked ? 'yes' : 'no');
+            if (window.posthog) posthog.capture('site_signup', { finance: form.finance.checked });
+            // fire-and-forget: don't block the UI on Apps Script's slow round-trip
+            fetch('{{ site.signup_form_url }}', { method: 'POST', mode: 'no-cors', body: data }).catch(function(){});
+            // respond instantly so there's nothing left to double-click
+            form.innerHTML = '<p class="signup-copy">thanks &mdash; you\'re in.</p>';
+        });
+    })();
+</script>
+{%- endif -%}
