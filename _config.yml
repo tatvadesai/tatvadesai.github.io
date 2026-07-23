@@ -18,6 +18,10 @@ linkedin_username: tatvadesai
 posthog_api_key: phc_GeUcz0Ouu6G5M37lqn3AIpnciAQgRBmFHseXIM5gDS4
 posthog_host: https://us.i.posthog.com
 
+# Email signup (Google Apps Script web-app URL). The essay signup box only
+# renders when this is set. Paste the deployed /exec URL here.
+signup_form_url: "https://script.google.com/macros/s/AKfycbxBcoVrfR1COsly_y7b8spmLGF-RNkIGkMebUxxi-bQoMSjU7koFs3YCgPOVrNSd_SM/exec"
+
 # Build settings
 # theme: minima 
 plugins:
