@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | absolute_url }}">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     {%- feed_meta -%}
@@ -33,6 +32,7 @@
         <a href="/" class="nav-link">home</a>
         <a href="/essays" class="nav-link{% if page.url == '/essays/' or page.url contains '/essays/' %} active{% endif %}">essays</a>
         <a href="/personal-software" class="nav-link{% if page.url == '/personal-software/' %} active{% endif %}">software</a>
+        <a href="/" class="nav-link">portfolio</a>
         <a href="/about" class="nav-link{% if page.url == '/about/' %} active{% endif %}">about</a>
         <a href="/skill-issue" class="nav-pill{% if page.url == '/skill-issue/' %} active{% endif %}">skill issue</a>
     </nav>
