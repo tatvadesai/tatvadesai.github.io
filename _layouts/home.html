@@ -50,8 +50,7 @@
             </div>
 
             <div class="index-block index-contact">
-                <a href="{{ '/assets/Tatva_Desai_HSBC_CCM_Quant_Resume.docx' | relative_url }}">Risk resume</a>
-                <a href="{{ '/assets/Tatva_Desai_HSBC_Business_Development_COO_Resume.docx' | relative_url }}">Strategy resume</a>
+                <a href="{{ '/assets/Tatva_Desai_HSBC_Combined_Quant_BDO_Resume.docx' | relative_url }}">Resume</a>
                 <a href="mailto:tatvadesai95@gmail.com">Email</a>
                 <a href="https://linkedin.com/in/tatvadesai" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://github.com/tatvadesai" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -83,7 +82,7 @@
                     <button class="project-summary" type="button" aria-expanded="false">
                         <span class="project-number">01</span>
                         <span class="project-title">
-                            <strong>Wholesale Credit MI Cockpit</strong>
+                            <strong>Wholesale Credit Early-Warning &amp; MI Monitor</strong>
                             <small>Which concentrations and warning signals require review?</small>
                         </span>
                         <span class="project-domain">Credit · MI</span>
@@ -98,7 +97,7 @@
                             <div><span>Boundary</span><p>No real obligors, RWA, economic capital, approvals or production workflow.</p></div>
                         </div>
                         <p class="detail-note">Immutable snapshots, SHA-256 manifests, atomic mart replacement and read-only dashboard access keep the analytical path reviewable.</p>
-                        <p class="detail-action"><a href="https://github.com/tatvadesai/wholesale-credit-cockpit" target="_blank" rel="noopener noreferrer">Source & tests — wholesale-credit-cockpit</a> · <a href="https://wholesale-credit-cockpit.streamlit.app" target="_blank" rel="noopener noreferrer">Live cockpit (Streamlit)</a></p>
+                        <p class="detail-action"><a href="https://github.com/tatvadesai/wholesale-credit-monitor" target="_blank" rel="noopener noreferrer">Source &amp; tests — wholesale-credit-monitor</a> · <a href="https://wholesale-credit-cockpit.streamlit.app" target="_blank" rel="noopener noreferrer">Live app (Streamlit)</a></p>
                     </div>
                 </article>
 
@@ -129,22 +128,22 @@
                     <button class="project-summary" type="button" aria-expanded="false">
                         <span class="project-number">03</span>
                         <span class="project-title">
-                            <strong>Portfolio Risk & Allocation Engine</strong>
-                            <small>What return was earned for the risk, and where does the portfolio break?</small>
+                            <strong>Portfolio Tearsheet</strong>
+                            <small>Which return is the real one — what the money earned, or what the picks earned?</small>
                         </span>
-                        <span class="project-domain">Risk · Allocation</span>
-                        <span class="project-proof">752 <em>trading days</em></span>
+                        <span class="project-domain">Returns · Attribution</span>
+                        <span class="project-proof">5 <em>return measures</em></span>
                         <span class="project-toggle" aria-hidden="true">+</span>
                     </button>
                     <div class="project-detail">
                         <div class="detail-grid">
-                            <div><span>Decision</span><p>Compare risk-adjusted performance, tail loss, diversification and constrained allocations.</p></div>
-                            <div><span>Method</span><p>VaR/CVaR, drawdown, CAPM, Sharpe/Sortino/Calmar, SLSQP and a 60-point frontier.</p></div>
-                            <div><span>Evidence</span><p>Five charts, machine-readable outputs, cache hashes and three deterministic scenario matrices.</p></div>
-                            <div><span>Boundary</span><p>Historical in-sample analysis. No trading claim, forecast or investment recommendation.</p></div>
+                            <div><span>Decision</span><p>Separate the investor's money-weighted experience from the portfolio's time-weighted performance, so each question is answered by the measure built for it.</p></div>
+                            <div><span>Method</span><p>FIFO lot accounting over broker exports, then XIRR, TTWR, Modified Dietz, CAGR and rolling 63/126/252-session windows against the NIFTY 50.</p></div>
+                            <div><span>Evidence</span><p>Per-holding price sparklines, three rolling windows on one shared scale, a monthly return grid and drawdown against the index.</p></div>
+                            <div><span>Boundary</span><p>The shipped sample is fictional. Dividends, corporate actions, taxes and brokerage are not applied. Not a tax document or investment advice.</p></div>
                         </div>
-                        <p class="detail-note">The report states the central caveat: expected returns from historical means are unstable, while covariance estimates are usually more defensible.</p>
-                        <p class="detail-action"><a href="https://github.com/tatvadesai/portfolio-analytics" target="_blank" rel="noopener noreferrer">Source & report — portfolio-analytics</a></p>
+                        <p class="detail-note">The report opens on the distance between XIRR and TTWR and names it as the cost of cash-flow timing, because the two measures answer different questions and disagreeing is what they are for.</p>
+                        <p class="detail-action"><a href="https://github.com/tatvadesai/portfolio-tearsheet" target="_blank" rel="noopener noreferrer">Source &amp; report — portfolio-tearsheet</a></p>
                     </div>
                 </article>
 
