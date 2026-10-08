@@ -1,0 +1,35 @@
+<script>
+    (function() {
+        var root = document.documentElement;
+        var buttons = document.querySelectorAll('[data-theme-choice]');
+        var system = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function current() {
+            return root.getAttribute('data-theme') || (system.matches ? 'dark' : 'light');
+        }
+        function mark() {
+            var t = current();
+            buttons.forEach(function(b) {
+                b.setAttribute('aria-pressed', b.dataset.themeChoice === t ? 'true' : 'false');
+            });
+        }
+
+        buttons.forEach(function(b) {
+            b.addEventListener('click', function() {
+                var choice = b.dataset.themeChoice;
+                // Picking whatever the system already shows clears the
+                // override, so the site goes back to following the system.
+                if (choice === (system.matches ? 'dark' : 'light')) {
+                    root.removeAttribute('data-theme');
+                    try { localStorage.removeItem('theme'); } catch (e) {}
+                } else {
+                    root.setAttribute('data-theme', choice);
+                    try { localStorage.setItem('theme', choice); } catch (e) {}
+                }
+                mark();
+            });
+        });
+        system.addEventListener('change', mark);
+        mark();
+    })();
+</script>

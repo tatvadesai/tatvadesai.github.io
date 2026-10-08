@@ -1,0 +1,12 @@
+# Woodcut initials in assets/img/initials/<letter>.png, keyed by lowercase
+# letter. ratio is width / height of the image. Essays whose first letter
+# is missing here fall back to a plain Garamond drop cap.
+m:
+  ratio: 309 / 292
+  source: The Grey Story Book (1905), public domain
+p:
+  ratio: 465 / 468
+  source: The Met, DP855592, CC0
+t:
+  ratio: 453 / 463
+  source: The Met, DP855596, CC0

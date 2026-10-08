@@ -1,23 +1,44 @@
 ---
 layout: default
 ---
-<div class="reading-progress" id="reading-progress"></div>
+{%- comment -%}
+The opening paragraph gets a drop cap: a woodcut when one exists for its
+first letter (see _data/initials.yml), otherwise a Garamond letter. The
+rest of the first three words is set in small caps, book style. Only
+applied when the essay actually starts with a paragraph; if those words
+contain markup, only the letter is replaced.
+{%- endcomment -%}
+{%- assign body = content | strip -%}
+{%- assign opens_with_p = body | slice: 0, 3 -%}
+{%- if opens_with_p == '<p>' -%}
+    {%- assign plain = body | strip_html | strip -%}
+    {%- assign first = plain | slice: 0 -%}
+    {%- assign key = first | downcase -%}
+    {%- assign woodcut = site.data.initials[key] -%}
+    {%- assign words = plain | split: ' ' -%}
+    {%- assign lead = words | slice: 0, 3 | join: ' ' -%}
+    {%- assign lead_rest = lead | remove_first: first -%}
+    {%- if woodcut -%}
+        {%- capture opening -%}<p class="opening"><span class="initial" style="--src: url('{{ '/assets/img/initials/' | append: key | append: '.png' | relative_url }}'); --ratio: {{ woodcut.ratio }};">{{ first }}</span>{%- endcapture -%}
+    {%- else -%}
+        {%- capture opening -%}<p class="opening opening--type">{{ first }}{%- endcapture -%}
+    {%- endif -%}
+    {%- assign lead_needle = '<p>' | append: lead -%}
+    {%- capture lead_html -%}{{ opening }}<span class="lead">{{ lead_rest }}</span>{%- endcapture -%}
+    {%- assign with_lead = body | replace_first: lead_needle, lead_html -%}
+    {%- if with_lead == body -%}
+        {%- assign needle = '<p>' | append: first -%}
+        {%- assign body = body | replace_first: needle, opening -%}
+    {%- else -%}
+        {%- assign body = with_lead -%}
+    {%- endif -%}
+{%- endif %}
 <article>
-    <h1 class="page-title">{{ page.title }}</h1>
-    <p class="essay-meta">{{ page.date | date: "%B %d, %Y" }}</p>
-    <div class="essay-content">
-        {{ content }}
+    <header class="essay-header">
+        <h1 class="page-title">{{ page.title }}</h1>
+        <p class="essay-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" | downcase }}</time></p>
+    </header>
+    <div class="essay-content justified">
+        {{ body }}
     </div>
 </article>
-
-<script>
-    window.addEventListener('scroll', function() {
-        var progress = document.getElementById('reading-progress');
-        if (!progress) return;
-        var scrollTop = window.scrollY;
-        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        if (docHeight > 0) {
-            progress.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
-        }
-    });
-</script>

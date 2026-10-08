@@ -1,115 +1,39 @@
 ---
 layout: default
-title: personal software
+title: work
 permalink: /personal-software/
 ---
 
-<h1 class="page-title">personal software</h1>
+<h1 class="page-title">work</h1>
 
-<p class="software-intro">making useful software for personal use has never been easier. these are some of my projects that i have build and learned from.</p>
+<p class="software-intro">projects i've built and learned from.</p>
 
-<p class="software-intro subscript-like">last refreshed {{ site.time | date: "%-d %b %Y" }}.</p>
+{%- assign projects = site.projects | sort: "order" -%}
+{%- assign groups = "selected|selected work,quant|quant & analytics,tools|personal tools" | split: "," -%}
 
-<div class="software-list">
-
-    <div class="software-item reveal">
-        <div class="software-main">
-            <span class="software-name">study terminal</span>
-            <div class="software-links">
-                <a href="https://github.com/tatvadesai/study-terminal" target="_blank" rel="noopener noreferrer">github &rarr;</a>
+{%- for g in groups -%}
+{%- assign parts = g | split: "|" -%}
+{%- assign items = projects | where: "group", parts[0] -%}
+{%- if items.size > 0 %}
+<h2 class="section-heading">{{ parts[1] }}</h2>
+<ul class="work-list{% if parts[0] == 'tools' %} work-list--minor{% endif %}">
+    {%- for p in items %}
+    <li class="work-item{% if parts[0] == 'selected' %} work-item--selected{% endif %}">
+        {%- assign thumb = p.thumb | default: p.image -%}
+        <div class="work-detail{% unless thumb and parts[0] == 'selected' %} work-detail--text{% endunless %}">
+            {%- if parts[0] == 'selected' and thumb %}
+            <a class="work-thumb" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ thumb | relative_url }}" alt="" loading="lazy"></a>
+            {%- endif %}
+            <div class="work-copy">
+                <a class="work-name" href="{{ p.url | relative_url }}">{{ p.title }}</a>
+                <p class="work-summary">{{ p.summary }}</p>
+                {%- unless parts[0] == 'tools' %}
+                <p class="work-meta">{{ p.kind }}{% if p.year %} &middot; {{ p.year }}{% endif %}{% for l in p.links limit: 1 %} &middot; <a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
+                {%- endunless %}
             </div>
         </div>
-        <p class="software-desc">a full exam-prep operating system, built for (and during) my cfa level 1 prep. reads the books in-browser, spaced repetition tuned to the actual learning-science, question-bank drills with score tracking. one python file, zero dependencies, fully offline, bring your own pdfs.</p>
-    </div>
-
-    <div class="software-item reveal">
-        <div class="software-main">
-            <span class="software-name">gatheraround</span>
-            <div class="software-links">
-                <a href="https://gather-around.vercel.app" target="_blank" rel="noopener noreferrer">live &rarr;</a>
-            </div>
-        </div>
-        <p class="software-desc">built way before "agentic coding" was even a thing. now made 100x better with "agentic coding". made first internet ₹ here.</p>
-    </div>
-
-    <div class="software-item reveal">
-        <div class="software-main">
-            <span class="software-name">denoisr</span>
-            <div class="software-links">
-                <a href="https://denoisr-ui.vercel.app" target="_blank" rel="noopener noreferrer">live &rarr;</a>
-            </div>
-        </div>
-        <p class="software-desc">swiping is a habit. make it productive.</p>
-    </div>
-
-    <div class="software-item reveal">
-        <div class="software-main">
-            <span class="software-name">ekagrit ventures</span>
-            <div class="software-links">
-                <a href="https://ekagritventures.github.io" target="_blank" rel="noopener noreferrer">live &rarr;</a>
-            </div>
-        </div>
-        <p class="software-desc">personal finance notebook. obsidian as cms. directly renders from obsidian to website.</p>
-    </div>
-
-    <div class="software-item reveal">
-        <div class="software-main">
-            <span class="software-name">ereader</span>
-            <div class="software-links">
-                <a href="https://github.com/tatvadesai/EReader_pdf" target="_blank" rel="noopener noreferrer">github &rarr;</a>
-            </div>
-        </div>
-        <p class="software-desc">a simple pdf reader for clean reading downloaded scanned books from archive.</p>
-    </div>
-
-    <div class="software-item reveal">
-        <div class="software-main">
-            <span class="software-name">scratch</span>
-            <div class="software-links">
-                <a href="https://github.com/tatvadesai/scratch" target="_blank" rel="noopener noreferrer">github &rarr;</a>
-            </div>
-        </div>
-        <p class="software-desc">simple notetaking tool that is surprisingly useful. copied from a tool which cost $, so made my own.</p>
-    </div>
-
-    <div class="software-item reveal">
-        <div class="software-main">
-            <span class="software-name">tearsheet</span>
-            <div class="software-links">
-                <a href="https://github.com/tatvadesai/tearsheet" target="_blank" rel="noopener noreferrer">github &rarr;</a>
-            </div>
-        </div>
-        <p class="software-desc">fun idea to see a fund management rigour applied to a personal portfolio.</p>
-    </div>
-
-    <div class="software-item reveal">
-        <div class="software-main">
-            <span class="software-name">luminaries</span>
-            <div class="software-links">
-                <a href="https://github.com/tatvadesai/luminaries" target="_blank" rel="noopener noreferrer">github &rarr;</a>
-            </div>
-        </div>
-        <p class="software-desc">extremely useful tool i use daily. i just right click and use luminaries to research people on perplexity. it saves a list and time!</p>
-    </div>
-
-    
-
-    <div class="software-item reveal">
-        <div class="software-main">
-            <span class="software-name">wikipedia age calculator</span>
-            <div class="software-links">
-                <a href="https://github.com/tatvadesai/wikipedia_age" target="_blank" rel="noopener noreferrer">github &rarr;</a>
-            </div>
-        </div>
-        <p class="software-desc">built with initial copilot launch. don't use it anymore. was so fascinated with vibe-coding that i even made a video about it <a href="https://www.youtube.com/watch?v=V7NDT2PYTWY" target="_blank" rel="noopener noreferrer">here.</a> </p>
-    </div>
-
-    <div class="software-item reveal">
-        <div class="software-main">
-            <span class="software-name">this website</span>
-            <div class="software-links"></div>
-        </div>
-        <p class="software-desc">the website you're on.</p>
-    </div>
-
-</div>
+    </li>
+    {%- endfor %}
+</ul>
+{%- endif %}
+{%- endfor %}

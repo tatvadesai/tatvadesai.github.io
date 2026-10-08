@@ -1,0 +1,14 @@
+<nav class="site-nav" aria-label="site">
+    {%- unless include.home %}
+    <a href="/" class="home-link">⚹home</a>
+    {%- endunless %}
+    <a href="/essays/"{% if page.url contains '/essays/' %} aria-current="page"{% endif %}>writings</a>
+    <a href="/personal-software/"{% if page.url == '/personal-software/' or page.collection == 'projects' %} aria-current="page"{% endif %}>work</a>
+    <a href="/about/"{% if page.url == '/about/' %} aria-current="page"{% endif %}>about</a>
+    <a href="/skill-issue/"{% if page.url == '/skill-issue/' %} aria-current="page"{% endif %}>skill issue</a>
+    <span class="theme-switch" role="group" aria-label="colour theme">
+        <button type="button" data-theme-choice="light">light</button>
+        <span aria-hidden="true">&middot;</span>
+        <button type="button" data-theme-choice="dark">dark</button>
+    </span>
+</nav>

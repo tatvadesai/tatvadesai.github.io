@@ -5,5 +5,7 @@ _site
 vendor
 .DS_Store
 .claude/
-implementation-documentation.md
-website-modernization-tracker.md
+.impeccable/
+font-preview/
+__pycache__/
+*.pyc

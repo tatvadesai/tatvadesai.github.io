@@ -1,15 +1,15 @@
 {%- if site.signup_form_url and site.signup_form_url != "" -%}
-<section class="signup">
+<section class="signup" aria-labelledby="signup-title">
+    <h2 class="section-heading" id="signup-title">notes from tatva</h2>
+    <p class="signup-description">writings, projects, and things i find interesting.</p>
     <form class="signup-form" id="site-signup-form">
-        <p class="signup-copy">i occasionally post here. no spam.</p>
+        <label class="signup-label" for="signup-email">email address</label>
         <div class="signup-row">
-            <input type="email" name="email" placeholder="you@email.com" required aria-label="email address">
-            <button type="submit">join</button>
+            <input type="email" name="email" id="signup-email" required autocomplete="email" aria-describedby="signup-privacy">
+            <button type="submit">subscribe</button>
         </div>
-        <label class="signup-check">
-            <input type="checkbox" name="finance">
-            <span>also send me finance notes from <a href="https://ekagritventures.github.io" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">ekagrit ventures</a></span>
-        </label>
+        <p class="visually-hidden" id="signup-privacy">Receive notes from Tatva by email.</p>
+        <p class="signup-error" role="alert" id="signup-error" hidden></p>
         <input type="text" name="website" class="signup-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     </form>
 </section>
@@ -17,17 +17,44 @@
     (function() {
         var form = document.getElementById('site-signup-form');
         if (!form) return;
+        var button = form.querySelector('button[type="submit"]');
+        var input = form.querySelector('input[name="email"]');
+        var error = document.getElementById('signup-error');
+
+        function showError(message) {
+            error.textContent = message;
+            error.hidden = false;
+            input.removeAttribute('aria-invalid');
+            input.focus();
+        }
+
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             if (form.dataset.sent) return;            // guard against double-submit
-            form.dataset.sent = '1';
+
             var data = new FormData(form);
-            data.set('finance', form.finance.checked ? 'yes' : 'no');
-            if (window.posthog) posthog.capture('site_signup', { finance: form.finance.checked });
-            // fire-and-forget: don't block the UI on Apps Script's slow round-trip
-            fetch('{{ site.signup_form_url }}', { method: 'POST', mode: 'no-cors', body: data }).catch(function(){});
-            // respond instantly so there's nothing left to double-click
-            form.innerHTML = '<p class="signup-copy">thanks &mdash; you\'re in.</p>';
+            // Keep the existing endpoint contract without offering a second list.
+            data.set('finance', 'no');
+            if (window.posthog) posthog.capture('site_signup', { finance: false });
+
+            // Pending state, and the address stays put so a retry costs nothing.
+            button.disabled = true;
+            button.textContent = 'sending...';
+            error.hidden = true;
+
+            fetch('{{ site.signup_form_url }}', { method: 'POST', mode: 'no-cors', body: data })
+                .then(function() {
+                    form.dataset.sent = '1';
+                    // Announce it. A screen reader gets an event, not a silent swap.
+                    form.innerHTML = '<p class="signup-success" role="status">thanks &mdash; you\'re in.</p>';
+                })
+                .catch(function() {
+                    // no-cors resolves opaquely even on a 500, so a rejection here
+                    // means the request never reached the server at all.
+                    button.disabled = false;
+                    button.textContent = 'try again';
+                    showError('couldn\'t reach the server. your address is still here &mdash; try again.');
+                });
         });
     })();
 </script>

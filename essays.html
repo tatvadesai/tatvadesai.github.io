@@ -1,18 +1,17 @@
 ---
 layout: default
-title: essays
+title: writings
 permalink: /essays/
 ---
 
-<h1 class="page-title">essays</h1>
+<h1 class="page-title">writings</h1>
 
-<div class="essays-list">
-    {% for essay in site.essays reversed %}
-    <div class="essay-item">
-        <a href="{{ essay.url }}" class="essay-link">
-            <h3>{{ essay.title }}</h3>
-            <span class="essay-date">{{ essay.date | date: "%B %d, %Y" }}</span>
-        </a>
-    </div>
-    {% endfor %}
-</div>
+<ul class="plain-list writing-list home-writing">
+    {%- assign essays = site.essays | sort: "date" | reverse %}
+    {%- for essay in essays %}
+    <li>
+        <a href="{{ essay.url | relative_url }}">{{ essay.title }}</a>
+        <time datetime="{{ essay.date | date_to_xmlschema }}">{{ essay.date | date: "%b %Y" | downcase }}</time>
+    </li>
+    {%- endfor %}
+</ul>

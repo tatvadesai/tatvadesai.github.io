@@ -1,0 +1,42 @@
+---
+layout: default
+---
+{%- assign ordered = site.projects | sort: "order" -%}
+{%- for p in ordered -%}
+    {%- if p.url == page.url -%}
+        {%- assign index = forloop.index0 -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- assign prev_index = index | minus: 1 -%}
+{%- assign next_index = index | plus: 1 -%}
+<article class="project">
+    <header class="essay-header">
+        <h1 class="page-title">{{ page.title }}</h1>
+        <p class="essay-standfirst">{{ page.summary }}</p>
+    </header>
+
+    <dl class="project-facts">
+        {%- if page.kind %}<div><dt>kind</dt><dd>{{ page.kind }}</dd></div>{% endif %}
+        {%- if page.year %}<div><dt>year</dt><dd>{{ page.year }}</dd></div>{% endif %}
+        {%- if page.status %}<div><dt>status</dt><dd>{{ page.status }}</dd></div>{% endif %}
+        {%- if page.stack %}<div><dt>built with</dt><dd>{{ page.stack }}</dd></div>{% endif %}
+        {%- if page.links %}<div><dt>see it</dt><dd>{% for l in page.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% unless forloop.last %} &middot; {% endunless %}{% endfor %}</dd></div>{% endif %}
+    </dl>
+
+    {%- if page.image %}
+    <figure class="project-plate">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" loading="lazy">
+        {%- if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
+    </figure>
+    {%- endif %}
+
+    <div class="essay-content project-body justified">
+        {{ content }}
+    </div>
+
+    <nav class="project-pager" aria-label="more projects">
+        {%- if index > 0 %}<a href="{{ ordered[prev_index].url | relative_url }}">&larr; {{ ordered[prev_index].title }}</a>{% else %}<span></span>{% endif %}
+        <a href="{{ '/personal-software/' | relative_url }}">all work</a>
+        {%- if next_index < ordered.size %}<a href="{{ ordered[next_index].url | relative_url }}">{{ ordered[next_index].title }} &rarr;</a>{% else %}<span></span>{% endif %}
+    </nav>
+</article>

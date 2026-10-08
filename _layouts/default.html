@@ -1,97 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | absolute_url }}">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    {%- feed_meta -%}
-    {%- seo -%}
-    {%- if site.posthog_api_key and site.posthog_host -%}
-    <script>
-        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-        posthog.init('{{ site.posthog_api_key }}',{api_host:'{{ site.posthog_host }}', person_profiles: 'identified_only'})
-    </script>
-    {%- endif -%}
-    <script>
-        (function() {
-            var theme = localStorage.getItem('theme');
-            if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-        })();
-    </script>
+{% include head.html %}
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="site-nav">
-        <button class="dark-mode-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <a href="/" class="nav-link">home</a>
-        <a href="/essays" class="nav-link{% if page.url == '/essays/' or page.url contains '/essays/' %} active{% endif %}">essays</a>
-        <a href="/personal-software" class="nav-link{% if page.url == '/personal-software/' %} active{% endif %}">software</a>
-        <a href="/about" class="nav-link{% if page.url == '/about/' %} active{% endif %}">about</a>
-        <a href="/skill-issue" class="nav-pill{% if page.url == '/skill-issue/' %} active{% endif %}">skill issue</a>
-    </nav>
+    <main class="sheet{% if page.url == '/personal-software/' %} sheet--software{% elsif page.url == '/skill-issue/' %} sheet--people{% elsif page.collection == 'projects' %} sheet--project{% endif %}">
+        {% include site-nav.html %}
 
-    <!-- Page Content -->
-    <main class="page-content">
         {{ content }}
+
         {% include signup.html %}
+
+        {% include site-footer.html %}
     </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-divider"></div>
-        <div class="footer-main">
-            <div>
-                <div class="footer-name">tatva desai</div>
-                <div class="footer-tagline">pathologically curious, perpetually building</div>
-            </div>
-            <div class="footer-right">
-                <div class="footer-links">
-                    <a href="mailto:tatvadesai95@gmail.com">email</a>
-                    <a href="https://twitter.com/tatvadesai" target="_blank" rel="noopener noreferrer">twitter</a>
-                    <a href="https://linkedin.com/in/tatvadesai" target="_blank" rel="noopener noreferrer">linkedin</a>
-                </div>
-                <a href="https://illiquidthoughts.substack.com/" target="_blank" rel="noopener noreferrer" class="footer-substack">documenting my MBA journey on substack &rarr;</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span class="footer-copyright">made with mass amounts of caffeine &copy; 2025</span>
-        </div>
-    </footer>
-
-    <script>
-        function toggleTheme() {
-            var html = document.documentElement;
-            var current = html.getAttribute('data-theme');
-            var next = current === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        }
-
-        // Staggered scroll-reveal for inner page elements
-        (function() {
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-
-            var selectors = '.blog-card, .essay-item, .person-item, .software-item';
-            document.querySelectorAll(selectors).forEach(function(el, i) {
-                el.classList.add('reveal');
-                el.style.setProperty('--delay', (i * 0.06) + 's');
-                observer.observe(el);
-            });
-        })();
-    </script>
 </body>
 </html>

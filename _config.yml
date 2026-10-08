@@ -1,16 +1,9 @@
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
 title: tatva desai
 email: tatvadesai95@gmail.com
 description: >-
   pathologically curious
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tatvadesai.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: ""
+url: "https://tatvadesai.github.io"
 twitter_username: tatvadesai
 github_username: tatvadesai
 linkedin_username: tatvadesai
@@ -18,21 +11,28 @@ linkedin_username: tatvadesai
 posthog_api_key: phc_GeUcz0Ouu6G5M37lqn3AIpnciAQgRBmFHseXIM5gDS4
 posthog_host: https://us.i.posthog.com
 
-# Email signup (Google Apps Script web-app URL). The essay signup box only
+# Email signup (Google Apps Script web-app URL). The shared signup only
 # renders when this is set. Paste the deployed /exec URL here.
 signup_form_url: "https://script.google.com/macros/s/AKfycbxBcoVrfR1COsly_y7b8spmLGF-RNkIGkMebUxxi-bQoMSjU7koFs3YCgPOVrNSd_SM/exec"
 
-# Build settings
-# theme: minima 
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
 
+exclude:
+  - AGENTS.md
+  - README.md
+  - scripts
+  - font-preview
+
 collections:
   essays:
     output: true
     permalink: /essays/:slug/
+  projects:
+    output: true
+    permalink: /software/:slug/
 
 defaults:
   - scope:
@@ -40,3 +40,8 @@ defaults:
       type: "essays"
     values:
       layout: "essay"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"

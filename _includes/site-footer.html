@@ -1,0 +1,14 @@
+<footer class="site-footer">
+    {%- if include.home %}
+    {% include site-nav.html home=true %}
+    {%- else %}
+    <p class="connect-links">
+        <a href="mailto:tatvadesai95@gmail.com">email</a> &middot;
+        <a href="https://twitter.com/tatvadesai">twitter</a> &middot;
+        <a href="https://linkedin.com/in/tatvadesai">linkedin</a> &middot;
+        <a href="https://illiquidthoughts.substack.com/">substack</a>
+    </p>
+    {%- endif %}
+    <p class="site-copyright">&copy; {{ site.time | date: "%Y" }} tatva desai</p>
+</footer>
+{% include theme-script.html %}
