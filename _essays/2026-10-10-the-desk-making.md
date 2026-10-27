@@ -7,6 +7,21 @@ permalink: /essays/the-desk-making/
 published: true
 ---
 
+*Designing a live finance game for teams, organisers and a room full of people.*
+
+**10 desks · 4 companies · 16 rounds · 160 live valuations**
+
+The Desk began with a product problem: how do you make company valuation feel like a real decision, then run that decision smoothly in a crowded classroom?
+
+I designed The Desk for Finomaniac at BITS Pilani. Teams study a company, submit what they think it is worth, then trade against the market price made from everyone’s numbers. The true value stays hidden until the company's final round. Each decision has a cost, and every team has to decide when to act and when to pass.
+
+My work covered the game loop, information design, player and organiser interfaces, the room display, and rehearsal changes. I started with a single-browser prototype, tested the rules with scripted desks, and used the live rehearsal to find problems that a screen mock-up could not reveal.
+
+<figure class="project-plate">
+  <img src="{{ '/assets/img/essays/the-desk-room-essay.webp' | relative_url }}" alt="a wide view of the classroom during the desk" loading="lazy">
+  <figcaption>the desk, live at bits pilani.</figcaption>
+</figure>
+
 ## a game mechanic that shapes behaviour
 
 Each round gives every team public company information and one private fact. Teams submit a valuation. The median of those valuations becomes the market price.
@@ -42,8 +57,6 @@ I also gave the screens one visual language: a paper dossier with cream surfaces
   <figcaption>the team screen puts the information and valuation action in one place.</figcaption>
 </figure>
 
-*The team screen puts the information and valuation action in one place.*
-
 The first version revealed the market and opened trading as soon as the last valuation arrived. In a room, that gave teams little time to notice the price. I split the round into four steps: submit valuations, lock bids, reveal the market on the projector, then open the trade window. Each screen now had one clear job in the sequence.
 
 I also removed the permanent leaderboard from the projector during rounds. It pulled attention toward rank while teams needed to read the case. The organiser could show standings between companies. During a round, the projector showed the clock and company facts. It showed how many teams had submitted without naming the teams still working.
@@ -55,14 +68,10 @@ The room display also had to protect hidden information. If it showed live profi
   <figcaption>the projector gave the room one shared view of the market reveal.</figcaption>
 </figure>
 
-*The projector gave the room one shared view of the market reveal.*
-
 <figure class="project-plate">
   <img src="{{ '/assets/img/essays/the-desk-console.webp' | relative_url }}" alt="the organiser console with phase controls and desk status" loading="lazy">
   <figcaption>the organiser console showed the controls and the state of each desk.</figcaption>
 </figure>
-
-*The organiser console showed the controls and the state of each desk.*
 
 ## useful information without a suggested answer
 
@@ -86,8 +95,6 @@ The timeout rule also needed work. A missed clock could replace a quiet team wit
   <img src="{{ '/assets/img/essays/the-desk-team-essay.webp' | relative_url }}" alt="a team at a laptop while the market is shown on the projector" loading="lazy">
   <figcaption>a team at its desk as the room follows the market reveal.</figcaption>
 </figure>
-
-*A team at its desk as the room follows the market reveal.*
 
 ## what the event showed
 
