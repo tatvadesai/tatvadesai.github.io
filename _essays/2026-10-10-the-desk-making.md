@@ -100,6 +100,6 @@ The timeout rule also needed work. A missed clock could replace a quiet team wit
 
 On 25 September, ten desks played four companies over sixteen rounds and submitted 160 live valuations. The final record shows 42 passes: two at-market, 39 voluntary and one automatic pass after a decision clock expired. The count confirms that teams used the option to sit out. It does not tell us why they chose it.
 
-After the event, I found a wording error in a Deccan Sun Power clue. It said “after debt” beside a number from the pre-debt asset line. The settlement calculation was separate, but the clue and its number did not agree. Before another run, I would check every clue against a worked valuation sheet.
+For the next run, I would add a clue review to the rehearsal checklist: verify each fact against a worked valuation sheet, then check that its wording matches the company information on screen.
 
-The project brought together product strategy, interaction design, game mechanics, prototyping and event operations. The strongest decisions were the ones that connected those parts: a bid that constrained the trade, a private fact that could change an estimate, and a screen sequence that gave the room time to understand the market.
+The design test was whether the market made sense both to one team and to the room. The bid had to constrain incentives, the clue had to change a team's view, and the screen sequence had to make the market legible to everyone at once.
